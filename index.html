@@ -1,307 +1,555 @@
-<!DOCTYPE html><html lang="az">
+
+<!DOCTYPE html>
+<html lang="az">
 <head>
-<meta name="google-site-verification" content="Ek2A2SdXxyDmbTo1_t7fVr0zr_XNiUf-Sn4Q-XREjUY" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ağamirzə Cəfərli — Şair</title><style>
-* {
-    box-sizing: border-box;
-}
+<meta name="google-site-verification" content="Ek2A2SdXxyDmbTo1_t7fVr0zr_XNiUf-Sn4Q-XREjUY">
+<meta name="description" content="Ağamirzə Cəfərlinin şeirləri, kitabları və yaradıcılığı.">
+<title>Ağamirzə Cəfərli — Şair</title>
 
-html {
-    scroll-behavior: smooth;
-}
+<style>* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-    margin: 0;
-    background:#f3ead9;
-    color: #245b36;
-    font-family: Georgia, "Times New Roman", serif;
-    line-height: 1.8;
+  margin: 0;
+  background: #f3ead9;
+  color: #245b36;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.8;
 }
 
 .hero {
-    min-height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 60px 20px;
-    background: radial-gradient(circle, #fffaf0 0%, #f3ead9 55%, #e6d2ad 100%);
-    position: relative;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background: radial-gradient(circle, #fffaf0 0%, #f3ead9 55%, #e6d2ad 100%);
+  position: relative;
 }
 
 .hero::before {
-    content: "";
-    position: absolute;
-    inset: 25px;
-    border: 1px solid #ad8750;
+  content: "";
+  position: absolute;
+  inset: 25px;
+  border: 1px solid #ad8750;
 }
 
-.hero > div {
-    position: relative;
-    z-index: 1;
-}
+.hero > div { position: relative; z-index: 1; }
 
 .kicker {
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    color: #9a7133;
-    font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #9a7133;
+  font-size: 13px;
 }
 
 h1 {
-    font-size: clamp(45px, 9vw, 100px);
-    font-weight: 400;
-    margin: 15px 0 5px;
+  font-size: clamp(38px, 8vw, 76px);
+  font-weight: 400;
+  margin: 15px 0 5px;
 }
 
 .tagline {
-    font-size: 21px;
-    font-style: italic;
-    color: #665544;
+  font-size: 21px;
+  font
+-style: italic;
+  color: #665544;
 }
 
 nav {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    text-align: center;
-    background: rgba(243,234,217,0.97);
-    border-bottom: 1px solid #d5c19b;
-    padding: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  text-align: center;
+  background: rgba(243,234,217,.97);
+  border-bottom: 1px solid #d5c19b;
+  padding: 12px 8px;
 }
 
 nav a {
-    color: #34291f;
-    text-decoration: none;
-    margin: 0 12px;
-    font-size: 15px;
+  display: inline-block;
+  color: #34291f;
+  text-decoration: none;
+  margin: 4px 10px;
+  font-size: 15px;
 }
 
-nav a:hover {
-    color: #9a7133;
-}
+nav a:hover { color: #9a7133; }
 
 main {
-    max-width: 1050px;
-    margin: auto;
-    padding: 35px 22px;
+  max-width: 1050px;
+  margin: auto;
+  padding: 25px 22px;
 }
 
 section {
-    padding: 65px 0;
-    border-bottom: 1px solid #d5c19b;
+  padding: 55px 0;
+  border-bottom: 1px solid #d5c19b;
+  scroll-margin-top: 75px;
 }
 
 h2 {
-    text-align: center;
-    font-size: 35px;
-    font-weight: 400;
-    margin-bottom: 30px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0 0 25px;
 }
 
 .intro {
-    max-width: 760px;
-    margin: auto;
-    text-align: center;
-    font-size: 19px;
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+  font-size: 19px;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
 }
 
 .card {
-    background: #fffaf0;
-    border: 1px solid #d8c7a5;
-    padding: 28px;
-    box-shadow: 0 8px 25px rgba(70,50,20,0.08);
+  background: #fffaf0;
+  border: 1px solid #d8c7a5;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(70,50,20,.08);
 }
 
 .card h3 {
-    color: #956b2e;
-    font-weight: 400;
-    font-size: 23px;
+  color: #956b2e;
+  font-weight: 400;
+  font-size: 22px;
 }
 
-.poem {
-    max-width: 650px;
-    margin: 25px auto;
-    padding: 30px;
-    background: #fffaf0;
-    border-left: 4px solid #a57b38;
-    text-align: center;
-    font-style: italic;
-    font-size: 18px;
+.poetry-section {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.poetry-author {
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.open-book {
+  max-width: 700px;
+  min-height: 360px;
+  margin: auto;
+  padding: 12px;
+  background: linear-gradient(
+    90deg, #9b6537, #d6b47b 8%, #fff8e9 12%,
+    #fffdf5 50%, #e9d9b8 51%, #fff8e9 54%,
+    #d6b47b 96%, #9b6537
+  );
+  border-radius: 12px 18px 18px 12px;
+  box-shadow: 0 12px 25px #65432140;
+}
+
+.book-page {
+  padding: 22px;
+  min-height: 330px;
+  border: 1px solid #d8c39b;
+  background: #fffdf5;
+  color: #4b2e1b;
+}
+
+#page-number {
+  display: block;
+  text-align: right;
+  color: #92734a;
+  font-size: 13px;
+}
+
+#poem-title {
+  color: #743b26;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.poem-text {
+  white-space: pre-line;
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+.book-author {
+  margin-top: 25px;
+  font-style: italic;
+}
+
+.book-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.book-controls button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: #754626;
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.book-controls button:disabled {
+  opacity: .45;
+  cursor: default;
 }
 
 .bio {
-    max-width: 800px;
-    margin: auto;
-    background: #fffaf0;
-    border: 1px solid #d8c7a5;
-    padding: 35px;
+  max-width: 800px;
+  margin: auto;
+  background: #fffaf0;
+  border: 1px solid #d8c7a5;
+  padding: 30px;
+}
+
+a.text-link {
+  color: #754626;
+  overflow-wrap: anywhere;
 }
 
 footer {
-    text-align: center;
-    background: #e5d3b1;
-    padding: 45px 20px;
+  text-align: center;
+  background: #e5d3b1;
+  padding: 35px 20px;
+  color: #4b2e1b;
 }
 
 @media (max-width: 650px) {
-    nav a {
-        display: inline-block;
-        margin: 5px 7px;
-    }
-
-    .hero::before {
-        inset: 12px;
-    }
-
-    .bio {
-        padding: 22px;
-    }
+  .hero::before { inset: 12px; }
+  .tagline { font-size: 18px; }
+  main { padding: 15px; }
+  section { padding: 38px 0; }
+  h2 { font-size: 27px; }
+  .bio { padding: 20px; }
+  .open-book { min-height: 320px; padding: 7px; }
+  .book-page { padding: 15px 10px; }
+  .poem-text { font-size: 15px; }
 }
-</style></head><body><header class="hero" id="ana">
-    <div>
-        <div class="kicker">Şair · Söz · Nəğmə</div>    <h1>Ağamirzə Cəfərli</h1>
+</style>
+</head>
 
-    <div class="tagline">
-        Şeirin, sözün və nəğmənin dünyası
+<body>
+
+<header class="hero" id="ana">
+  <div>
+    <div class="kicker">Şair · Söz · Nəğmə</div>
+    <h1>Ağamirzə Cəfərli</h1>
+    <div class="tagline">Şeirin, sözün və nəğmənin dünyası</div>
+  </div>
+</header>
+
+<nav>
+  <a href="#ana">Ana səhifə</a>
+  <a href="#seirler">Şeirlər</a>
+  <a href="#musiqiler">Musiqilər</a>
+  <a href="#kitablar">Kitablar</a>
+  <a href="#haqqimda">Haqqımda</a>
+  <a href="#elaqe">Əlaqə</a>
+</nav>
+
+<main>
+
+<section id="giris">
+  <p class="intro">
+    Sözün qəlbdən doğulduğu, misranın duyğuya,
+    duyğunun isə nəğməyə çevrildiyi ədəbi məkan.
+    Ağamirzə Cəfərlinin yaradıcılığına xoş gəlmisiniz.
+  </p>
+</section>
+
+<section id="seirler" class="poetry-section">
+  <h2>📖 Şeir dünyası</h2>
+  <p class="poetry-author">Ağamirzə Cəfərli</p>
+
+  <div class="open-book">
+    <div class="book-page">
+      <span id="page-number">1 / 6</span>
+      <h3 id="poem-title">Darıxıram siz çün</h3>
+      <div id="poem-text" class="poem-text"></div>
+      <p class="book-author">Müəllif: Ağamirzə Cəfərli</p>
     </div>
-</div>
+  </div>
 
-</header><nav>
-    <a href="#ana">Ana səhifə</a>
-    <a href="#seirler">Şeirlər</a>
-    <a href="#musiqiler">Musiqilər</a>
-    <a href="#kitablar">Kitablar</a>
-    <a href="#haqqimda">Haqqımda</a>
-    <a href="#elaqe">Əlaqə</a>
-</nav><main><section>
-    <p class="intro">
-        Sözün qəlbdən doğulduğu, misranın duyğuya,
-        duyğunun isə nəğməyə çevrildiyi ədəbi məkan.
-    </p>
-</section><section id="seirler">
-    <h2>Şeirlər</h2><div class="poem">
-    “Söz insanın qəlbindən doğular,
-    zaman keçsə də yaddaşlarda yaşayar.”
-</div>
+  <div class="book-controls">
+    <button id="prev-poem" type="button">← Əvvəlki</button>
+    <button id="next-poem" type="button">Növbəti →</button>
+  </div>
+</section>
 
-<div class="grid">
-
+<section id="musiqiler">
+  <h2>🎵 Musiqilər</h2>
+  <div class="grid">
     <div class="card">
-        <h3>Yeni şeirlər</h3>
-        <p>
-            Ağamirzə Cəfərlinin yeni yazdığı
-            şeirlər və poetik düşüncələri.
-        </p>
+      <h3>Şeir və nəğmə</h3>
+      <p>Ağamirzə Cəfərlinin söz dünyası və nəğmələri.</p>
+      <p>Bu bölməyə musiqi bağlantıları əlavə edilə bilər.</p>
     </div>
-
     <div class="card">
-        <h3>Seçilmiş şeirlər</h3>
-        <p>
-            Yaradıcılığının yaddaşda qalan,
-            könüldə iz buraxan nümunələri.
-        </p>
+      <h3>Dinləmələr</h3>
+      <p>Mahnı və ifaların bağlantıları burada yerləşdirilə bilər.</p>
     </div>
+  </div>
+</section>
 
+<section id="kitablar">
+  <h2>📚 Kitablar</h2>
+  <div class="grid">
     <div class="card">
-        <h3>Bədahətən söz</h3>
-        <p>
-            15 yaşından başlayan bədahətən
-            meyxana yaradıcılığı.
-        </p>
+      <h3>Kitablar və nəşrlər</h3>
+      <p>Şairin kitabları, nəşrləri və ədəbi irsi haqqında məlumatlar.</p>
+      <p>Kitab üz qabıqları və sifariş bağlantıları hazır olduqda əlavə edilə bilər.</p>
     </div>
+  </div>
+</section>
 
-</div>
-
-</section><section id="musiqiler">
-    <h2>Musiqilər</h2><p class="intro">
-    Şeirin səsə, sözün nəğməyə çevrildiyi musiqi dünyası.
-</p>
-
-<div class="card">
-    <h3>Musiqi yaradıcılığı</h3>
-
+<section id="haqqimda">
+  <h2>Haqqımda</h2>
+  <div class="bio">
     <p>
-        Ağamirzə Cəfərli həm də musiqi bəstələyir.
-        Söz və musiqinin vəhdətindən doğan əsərləri
-        bu bölmədə təqdim olunacaq.
+      Ağamirzə Cəfərli — şair. Bu səhifə onun şeirlərini,
+      sözə və sənətə bağlılığını oxucularla bölüşmək üçün hazırlanıb.
     </p>
-</div>
-
-</section><section id="kitablar">
-    <h2>Kitablar</h2><div class="card">
-    <h3>Ədəbi yaradıcılıq</h3>
-
     <p>
-        Ağamirzə Cəfərlinin şeirlərinin toplandığı
-        kitablar gələcəkdə bu bölmədə təqdim ediləcək.
+      Saytda müəllifin şeirləri, musiqiləri və kitabları haqqında
+      məlumatlar toplanır.
     </p>
+  </div>
+</section>
 
+<section id="elaqe">
+  <h2>Əlaqə</h2>
+  <div class="bio">
     <p>
-        Hazırda müəllifin ayrıca şeir kitabı nəşr olunmayıb.
+      Əlaqə məlumatları və sosial şəbəkə bağlantıları burada yerləşdirilə bilər.
     </p>
-</div>
+  </div>
+</section>
 
-</section><section id="haqqimda">
-    <h2>Haqqımda</h2><div class="bio">
+</main>
 
-    <p>
-        <strong>Ağamirzə Balamirzə oğlu Cəfərli</strong>
-        7 yanvar 1979-cu ildə Masallı rayonunun
-        Xırmandalı kəndində anadan olmuşdur.
-    </p>
+<footer>
+  <p>© Ağamirzə Cəfərli — Bütün hüquqlar qorunur.</p>
+</footer>
 
-    <p>
-        Ədəbiyyata və söz sənətinə marağı hələ uşaqlıq
-        illərindən başlamışdır. İlk şeirlərini 10 yaşından
-        yazmağa başlayan Ağamirzə Cəfərli, 15 yaşından
-        bədahətən meyxana deməyə də başlamışdır.
-    </p>
+<script>
+const poems = [
+{
+title: "Darıxıram siz çün",
+text: `Darıxıram siz çün, hər an yanımda,
+Çəkiləndə şanlı adınız, şəhidlər.
+Bu həsrətinizdən mənim qanımda
+Çox yandırıb-yaxır odunuz, şəhidlər.
 
-    <p>
-        Onun yaradıcılığında şeir, söz və musiqi
-        bir-birini tamamlayan əsas istiqamətlərdir.
-        Müxtəlif illərdə yazdığı şeirlər
-        “Məşəl” jurnalında dərc olunmuşdur.
-    </p>
+O an uşaq kimi ağlar gözlərim,
+Anlamır, sizləri məndən istəyir.
+Nə edəcəyimdən əsir dizlərim,
+Aciz qaldığımdan ürək göynəyir.
 
-    <p>
-        Ağamirzə Cəfərli orta təhsilini Masallı rayonunun
-        Xırmandalı kəndində yerləşən Xıdır Məmmədov adına
-        orta məktəbdə almışdır.
-    </p>
+Göstərirəm behişt məzarınızı,
+Bu ağlar gözlərim ovunar deyə.
+Yenə qış görürlər ilk baharınızı,
+Ağlaşırlar mənə: “Dur, axtar!” deyə.
 
-    <p>
-        Yaradıcılığının mühüm istiqamətlərindən biri də
-        musiqidir. O, musiqi bəstələyir və sözlə musiqinin
-        vəhdətindən doğan əsərlər üzərində çalışır.
-    </p>
+Bilmirəm nə edim, necə mən edim,
+Gözlərim axtarıb ağlamasınlar.
+Başımı götürüb haraya gedim,
+Ağrılar ürəyimi dağlamasınlar.
 
-    <p>
-        Bu gün Ağamirzə Cəfərlinin yaradıcılığı şeir,
-        bədahətən söz demək və musiqi bəstələmək
-        istiqamətlərində davam edir.
-    </p>
+Çölümün gözlərin ovundurardım,
+İçimin gözü də ürəyimdədir.
+Göstərib sizləri rahat olardım,
+Yanğımın közüdür ürəyimdədir.
 
-</div>
+Yarısı qazi, yarısı şəhid torpağımın,
+Sizlərsiniz fəxri, uca övladı.
+Bir daha enməyən yüksək bayrağımın
+Sülh dilinə yatan sevimli adı.
 
-</section><section id="elaqe">
-    <h2>Əlaqə</h2><p class="intro">
-    Ədəbi əməkdaşlıq, tədbirlər və digər müraciətlər
-    üçün əlaqə məlumatları burada yerləşdiriləcək.
-</p>
+Bütün gözəlliklər yalnız sizsiniz,
+Sizi bir an düşünüb anmamaq olmur.
+Göz yaşından artan bir dənizsiniz,
+Sahilinizə yan almamaq olmur.`
+},
+{
+title: "O gecə yuxuma",
+text: `O gecə yuxuma qəmli girmişdin,
+Nigaran libası geyib gəlmişdin.
+Və belə bir cümlə qurub demişdin:
+“Balalarıma baxın”, ey nur şəhidim!
 
-</section></main><footer>
-    <strong>Ağamirzə Cəfərli</strong>
-    <br>
-    Şeirin, sözün və nəğmənin dünyası
-</footer></body>
+O gündən söndürə bilmir göz yaşım,
+Gözümün giləsi yanır, şəhidim.
+Ömrümə gətirir bir soyuq qışı,
+Qanım, damarlarım donur, şəhidim.
+
+Bir idim, bölünüb olmuşam iki,
+İçimdə elə bir külək qopur ki,
+Hirsli-hirsli çıxıb içimdən sanki,
+Ömrümün güllərin yonur, şəhidim.
+
+Etdiyin qəm çırpır məni hey dağa,
+Yanğım meydan oxuyur axan bulağa.
+Sanki bülbül küsür saldığım bağa,
+Yüz dənə vəhşi quş qonur, şəhidim.
+
+Bəziləri sizi unudan zaman,
+Çökür ürəyimin dağına duman.
+Ağlayır içində Azərbaycan,
+Qəlbimin telləri sınır, şəhidim.
+
+Şəhid övladını darda görəndə,
+Ürəyim parçalanır o zaman mənim də.
+Şəhidi sevməyən ana Vətəndə,
+Şəhid övladını nə qanır, şəhidim?
+
+Şəhidim, nigaran qalma, nə olar,
+Sizin övladınızı sevənlər də var.
+“Meşə qurdsuz olmaz”, deyib atalar,
+Sizi sevənlər sizi anır, şəhidim.`
+},
+{
+title: "Həyat öyrədir",
+text: `Hanı səhər şehi, xoş narın yağış?
+Yaz soyuq olmağı qışa öyrədir.
+Sinənin altında yum-yumşaq ürək
+Hər gün bərkiməyi daşa öyrədir.
+
+Alovdan keçməyi, sudan keçməyi,
+Həyatın qarasın, ağın seçməyi,
+Min ölçüb, bir dəfə kəsib-biçməyi
+Əqlin müdrikliyi başa öyrədir.
+
+Birdən niyə belə dəyişdi dövran?
+Hanı haqq, hanı o tərəzi-mizan?
+Közü qaladığın ocaqdır salan,
+Tutuşmağı közə maşa öyrədir.
+
+Həyata arxayın olub gəlirsən,
+Ürəyin göz yaşını alıb silirsən.
+Gülməklə yanaşı özün bilirsən,
+Tale ağlamağı qoşa öyrədir.
+
+Öyrədir, öyrənmir hələ bu dünya,
+Bu dünya hər şeyi çox bilir guya.
+Öyrətdiyi nədir, gör hələ, ayə?
+Pislik eləməyi xoşa öyrədir.`
+},
+{
+title: "Oğul Vətəninə şəhid olmasa",
+text: `Bitən çiçəkləri bahar soldurar,
+Çiçək qərənfilə baxıb solmasa,
+Bir ədəd qərənfil bitirməz torpaq,
+Oğul Vətəninə şəhid olmasa.
+
+Demə, ey şəhidim, nəyə qəmlisən?
+Kirpiyin nəmlidir, gözün nəmlidir.
+Axı sən mənimçün çox sevimlisən,
+Gözdən yaş süzülməz, ürək dolmasa.
+
+Siz şəhid olmusunuz bizlərə görə,
+Vətənçün yaş tökən gözlərə görə.
+Yaşamaq zülm olar sizlərə görə,
+Ürəkdə bir arzu, sevinc qalmasa.
+
+Sizinlə sönübdür yanan çırağım,
+Məcnun tək səhraya qaçıb marağım.
+Könlüm evi yanmaz, sönər yanığım,
+Həsrətiniz qəlbimə atəş salmasa.`
+},
+{
+title: "Şəhid oğlum",
+text: `Gecələr yuxumu gözümdən alıb,
+Xəyala döndərib sənsiz ömrümü.
+Ürəyimin içində qəm yuva salıb,
+Mən sənin yanına gələnə kimi.
+
+Hər dəfə bağrıma bassam da səni,
+Mən səndən ayrılıb doya bilmirəm.
+Şəhid oğlum, sən yat, düşünmə məni,
+Sənsiz balınca baş qoya bilmirəm.
+
+Qoyuram şəklini sinəmin üstə,
+O nur camalından ürəyim də öpsün.
+Bəxti kəm taleyim məni qəfəsdə
+Sıxırsa, üzümü kəfənlə örtsün.`
+},
+{
+title: "Şəhid qardaşım",
+text: `Əziz qazi qardaşımız Həsənov Pərvinin dilindən
+
+Mən sizi düşünüb, sizi anıram,
+Ürəyim od tutub alışır, şəhid.
+Görüşə gəlməyə qanadlanıram,
+Həsrət uçuşuma qarışır, şəhid.
+
+Xoş gün bağışladız bəxti küsgünə,
+Otuz il həsrətə ağlayan köçkünə.
+Həmişə yandınız Vətən köksünə,
+Yenə də o alov tutuşur, şəhid.
+
+Vətən sevgisidir ürəyinizdəki,
+Qeyrət torpağına atıbdır kökü.
+Cənnət şəhidlərə yaraşan təki,
+Cənnət məkanına yaraşır, şəhid.
+
+Mənə o şəhidlik qismət olmadı,
+Qismət məni niyə yada salmadı?
+İçimdə ruhuma vurub bu odu,
+Ürəyim mənimlə dalaşır, şəhid.
+
+Gizlədə bilmirəm göz yaşlarımı,
+Ağlayıram şəhid qardaşlarımı.
+Ağlayan çaylarmı, təkcə daşlarmı?
+Yer-göy həsrətindən ağlaşır, şəhid.
+
+Gəlmişəm məzarın üstünə, dilim
+Ancaq söz tutmayır, danışım, gülüm.
+Gedərəm özümdən hara, nə bilim?
+Ürəyim sizinlə danışır, şəhid.`
+}
+];
+
+let currentPoem = 0;
+
+function showPoem(index) {
+  currentPoem = index;
+
+  document.getElementById("poem-title").textContent = poems[index].title;
+  document.getElementById("poem-text").textContent = poems[index].text;
+  document.getElementById("page-number").textContent =
+    (index + 1) + " / " + poems.length;
+
+  document.getElementById("prev-poem").disabled = index === 0;
+  document.getElementById("next-poem").disabled =
+    index === poems.length - 1;
+
+  document.getElementById("seirler").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+document.getElementById("prev-poem").addEventListener("click", function () {
+  if (currentPoem > 0) showPoem(currentPoem - 1);
+});
+
+document.getElementById("next-poem").addEventListener("click", function () {
+  if (currentPoem < poems.length - 1) showPoem(currentPoem + 1);
+});
+
+showPoem(0);
+</script>
+
+</body>
 </html>
