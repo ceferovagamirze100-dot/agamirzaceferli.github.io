@@ -909,15 +909,19 @@ bağ baxçama çəmənimə.`
     const stopBtn = document.getElementById("stopBtn");
 
     let currentPoem = 0;
+    const banuAudio = new Audio("p_22447328_410.mp3");
 
     function stopSpeech() {
       if ("speechSynthesis" in window) {
         window.speechSynthesis.cancel();
       }
+
+      banuAudio.pause();
+      banuAudio.currentTime = 0;
       pauseBtn.textContent = "⏸ Fasilə";
     }
 
-    function showPoem(index) {
+function showPoem(index) {
       if (index < 0 || index >= poems.length) return;
 
       stopSpeech();
@@ -940,51 +944,34 @@ bağ baxçama çəmənimə.`
       showPoem(currentPoem + 1);
     });
 
+    
     readBtn.addEventListener("click", function () {
-      if (!("speechSynthesis" in window) ||
-          !("SpeechSynthesisUtterance" in window)) {
-        alert("Bu brauzer səsləndirməni dəstəkləmir.");
-        return;
-      }
+      banuAudio.pause();
+      banuAudio.currentTime = 0;
 
-      stopSpeech();
-
-      const speech = new SpeechSynthesisUtterance(
-        poems[currentPoem].title + ". " + poems[currentPoem].text +
-        ". Müəllif: Ağamirzə Cəfərli."
-      );
-
-      speech.lang = "az-AZ";
-      speech.rate = 0.85;
-
-      speech.onend = function () {
-        pauseBtn.textContent = "⏸ Fasilə";
-      };
-
-      speech.onerror = function (event) {
-        if (event.error !== "canceled" &&
-            event.error !== "interrupted") {
-          statusEl.textContent =
-            "Səsləndirmə alınmadı. Brauzerin səs imkanlarını yoxla.";
-        }
-      };
-
-      window.speechSynthesis.speak(speech);
+      banuAudio.play().catch(function () {
+        statusEl.textContent =
+          "Banu səsini başlatmaq alınmadı. İnterneti yoxlayın.";
+      });
     });
 
     pauseBtn.addEventListener("click", function () {
-      if (!("speechSynthesis" in window)) return;
-
-      const synth = window.speechSynthesis;
-
-      if (synth.speaking && !synth.paused) {
-        synth.pause();
-        pauseBtn.textContent = "▶ Davam et";
-      } else if (synth.paused) {
-        synth.resume();
+      if (banuAudio.paused) {
+        banuAudio.play().catch(function () {
+          statusEl.textContent = "Səs davam etdirilə bilmədi.";
+        });
         pauseBtn.textContent = "⏸ Fasilə";
+      } else {
+        banuAudio.pause();
+        pauseBtn.textContent = "▶ Davam et";
       }
     });
+
+    banuAudio.addEventListener("ended", function () {
+      pauseBtn.textContent = "⏸ Fasilə";
+    });
+
+
 
     stopBtn.addEventListener("click", stopSpeech);
 
