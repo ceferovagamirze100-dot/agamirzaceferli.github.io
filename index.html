@@ -1,554 +1,1104 @@
+HTML
 
 <!DOCTYPE html>
 <html lang="az">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="Ek2A2SdXxyDmbTo1_t7fVr0zr_XNiUf-Sn4Q-XREjUY">
-<meta name="description" content="Ağamirzə Cəfərlinin şeirləri, kitabları və yaradıcılığı.">
-<title>Ağamirzə Cəfərli — Şair</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#321c3e">
+  <meta name="description" content="Ağamirzə Cəfərlinin şeirləri, kitabı və yaradıcılığı.">
+  <title>Ağamirzə Cəfərli — Şeir dünyası</title>
 
-<style>* { box-sizing: border-box; }
+  <style>
+    :root {
+      --bənövşəyi: #321c3e;
+      --bənövşəyi-açıq: #56375f;
+      --qızılı: #d8b477;
+      --kağız: #fffaf0;
+      --mətn: #382640;
+      --çəhrayı: #9c4568;
+    }
 
-html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  background: #f3ead9;
-  color: #245b36;
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.8;
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-.hero {
-  min-height: 65vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 60px 20px;
-  background: radial-gradient(circle, #fffaf0 0%, #f3ead9 55%, #e6d2ad 100%);
-  position: relative;
-}
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--mətn);
+      background: #f7efe6;
+      line-height: 1.7;
+    }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 25px;
-  border: 1px solid #ad8750;
-}
+    button, input, textarea {
+      font: inherit;
+    }
 
-.hero > div { position: relative; z-index: 1; }
+    button, a, label {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-.kicker {
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  color: #9a7133;
-  font-size: 13px;
-}
+    a {
+      color: inherit;
+    }
 
-h1 {
-  font-size: clamp(38px, 8vw, 76px);
-  font-weight: 400;
-  margin: 15px 0 5px;
-}
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bənövşəyi);
+      border-bottom: 2px solid var(--qızılı);
+    }
 
-.tagline {
-  font-size: 21px;
-  font-style: italic;
-  color: #665544;
-}
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
 
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  text-align: center;
-  background: rgba(243,234,217,.97);
-  border-bottom: 1px solid #d5c19b;
-  padding: 12px 8px;
-}
+    .logo {
+      color: var(--qızılı);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
 
-nav a {
-  display: inline-block;
-  color: #34291f;
-  text-decoration: none;
-  margin: 4px 10px;
-  font-size: 15px;
-}
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 16px;
+    }
 
-nav a:hover { color: #9a7133; }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: .92rem;
+    }
 
-main {
-  max-width: 1050px;
-  margin: auto;
-  padding: 25px 22px;
-}
+    .nav-links a:hover {
+      color: var(--qızılı);
+    }
 
-section {
-  padding: 55px 0;
-  border-bottom: 1px solid #d5c19b;
-  scroll-margin-top: 75px;
-}
+    .hero {
+      min-height: 470px;
+      padding: 75px 20px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: white;
+      background:
+        radial-gradient(ellipse at top, #74517b 0%, transparent 60%),
+        linear-gradient(135deg, #24152d, #56375f, #2c1937);
+    }
 
-h2 {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 400;
-  margin: 0 0 25px;
-}
+    .hero-inner {
+      max-width: 800px;
+    }
 
-.intro {
-  max-width: 760px;
-  margin: auto;
-  text-align: center;
-  font-size: 19px;
-}
+    .hero-photo {
+      display: none;
+      width: 145px;
+      height: 145px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--qızılı);
+    }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
-}
+    .hero-photo.show {
+      display: block;
+    }
 
-.card {
-  background: #fffaf0;
-  border: 1px solid #d8c7a5;
-  padding: 25px;
-  box-shadow: 0 8px 25px rgba(70,50,20,.08);
-}
+    .eyebrow {
+      color: var(--qızılı);
+      letter-spacing: 3px;
+      font-size: .85rem;
+      text-transform: uppercase;
+    }
 
-.card h3 {
-  color: #956b2e;
-  font-weight: 400;
-  font-size: 22px;
-}
+    h1 {
+      margin: 12px 0;
+      font-size: clamp(2.3rem, 7vw, 4.5rem);
+      line-height: 1.15;
+    }
 
-.poetry-section {
-  padding: 30px 0;
-  text-align: center;
-}
+    .hero p {
+      font-size: 1.15rem;
+      margin: 20px auto 28px;
+    }
 
-.poetry-author {
-  font-style: italic;
-  margin-bottom: 25px;
-}
+    .button {
+      display: inline-block;
+      border: 1px solid var(--qızılı);
+      border-radius: 30px;
+      padding: 10px 18px;
+      background: var(--qızılı);
+      color: #2d1934;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .2s ease;
+    }
 
-.open-book {
-  max-width: 700px;
-  min-height: 360px;
-  margin: auto;
-  padding: 12px;
-  background: linear-gradient(
-    90deg, #9b6537, #d6b47b 8%, #fff8e9 12%,
-    #fffdf5 50%, #e9d9b8 51%, #fff8e9 54%,
-    #d6b47b 96%, #9b6537
-  );
-  border-radius: 12px 18px 18px 12px;
-  box-shadow: 0 12px 25px #65432140;
-}
+    .button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
 
-.book-page {
-  padding: 22px;
-  min-height: 330px;
-  border: 1px solid #d8c39b;
-  background: #fffdf5;
-  color: #4b2e1b;
-}
+    .button.dark {
+      background: var(--bənövşəyi);
+      color: white;
+      border-color: var(--bənövşəyi);
+    }
 
-#page-number {
-  display: block;
-  text-align: right;
-  color: #92734a;
-  font-size: 13px;
-}
+    .button:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+      transform: none;
+    }
 
-#poem-title {
-  color: #743b26;
-  font-size: 23px;
-  font-weight: 400;
-}
+    .section {
+      padding: 60px 18px;
+    }
 
-.poem-text {
-  white-space: pre-line;
-  line-height: 1.9;
-  font-size: 17px;
-}
+    .section.alt {
+      background: #eee1d6;
+    }
 
-.book-author {
-  margin-top: 25px;
-  font-style: italic;
-}
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
 
-.book-controls {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 22px;
-}
+    .section-title {
+      text-align: center;
+      color: var(--bənövşəyi);
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.3;
+      margin: 0 0 10px;
+    }
 
-.book-controls button {
-  padding: 12px 20px;
-  border: 0;
-  border-radius: 8px;
-  background: #754626;
-  color: white;
-  font-family: inherit;
-  font-size: 15px;
-  cursor: pointer;
-}
+    .ornament {
+      text-align: center;
+      color: var(--çəhrayı);
+      font-size: 1.5rem;
+      margin: 12px 0 20px;
+    }
 
-.book-controls button:disabled {
-  opacity: .45;
-  cursor: default;
-}
+    .intro {
+      max-width: 700px;
+      text-align: center;
+      margin: 0 auto 32px;
+      color: #6d586d;
+    }
 
-.bio {
-  max-width: 800px;
-  margin: auto;
-  background: #fffaf0;
-  border: 1px solid #d8c7a5;
-  padding: 30px;
-}
+    /* Şeir kitabının səhifələri */
 
-a.text-link {
-  color: #754626;
-  overflow-wrap: anywhere;
-}
+    .book {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--kağız);
+      border: 1px solid #d7c6aa;
+      border-left: 8px solid #d4c1a3;
+      border-radius: 3px 12px 12px 3px;
+      box-shadow: 0 15px 35px #3826401c;
+      overflow: hidden;
+      touch-action: pan-y;
+    }
 
-footer {
-  text-align: center;
-  background: #e5d3b1;
-  padding: 35px 20px;
-  color: #4b2e1b;
-}
+    .book-page {
+      min-height: 420px;
+      padding: 32px clamp(20px, 6vw, 65px);
+      text-align: center;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0,
+          transparent 33px,
+          #bba98a18 34px
+        ),
+        var(--kağız);
+    }
 
-@media (max-width: 650px) {
-  .hero::before { inset: 12px; }
-  .tagline { font-size: 18px; }
-  main { padding: 15px; }
-  section { padding: 38px 0; }
-  h2 { font-size: 27px; }
-  .bio { padding: 20px; }
-  .open-book { min-height: 320px; padding: 7px; }
-  .book-page { padding: 15px 10px; }
-  .poem-text { font-size: 15px; }
-}
-</style>
+    .page-number {
+      color: #8b7865;
+      font-size: .88rem;
+      margin-bottom: 8px;
+    }
+
+    .poem-title {
+      color: #803957;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      line-height: 1.35;
+      margin: 0 0 24px;
+    }
+
+    /* Hər misra alt-alta, bəndlər arasında boşluq */
+
+    .poem-text {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      text-align: center;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      line-height: 1.9;
+      color: #382640;
+      margin: 0;
+    }
+
+    .poem-author {
+      margin-top: 25px;
+      color: #8b4560;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+      margin: 22px auto 0;
+    }
+
+    .controls .button {
+      font-size: .92rem;
+    }
+
+    .status, .hint, .note {
+      text-align: center;
+      color: #786879;
+      font-size: .9rem;
+      margin: 12px auto 0;
+    }
+
+    /* Kitab üz qabığı */
+
+    .cover-wrap {
+      max-width: 365px;
+      margin: 30px auto 0;
+    }
+
+    .cover {
+      min-height: 490px;
+      padding: 28px 24px;
+      border: 5px double var(--qızılı);
+      outline: 1px solid #9d7540;
+      outline-offset: -12px;
+      background:
+        radial-gradient(circle at center, #80506a88, transparent 55%),
+        linear-gradient(145deg, #59334e, #24152d 70%, #4c2946);
+      color: #f8e7bf;
+      box-shadow: 0 15px 35px #38264030;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .cover-ornament {
+      color: var(--qızılı);
+      font-size: 2rem;
+      letter-spacing: 6px;
+    }
+
+    .cover h3 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      line-height: 1.3;
+      margin: 0 0 15px;
+    }
+
+    .cover-subtitle {
+      color: #f3d9e5;
+      font-style: italic;
+    }
+
+    .cover-author {
+      color: var(--qızılı);
+      font-size: 1.2rem;
+    }
+
+    .cover-photo {
+      display: none;
+      width: 125px;
+      height: 125px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--qızılı);
+    }
+
+    .cover-photo.show {
+      display: block;
+    }
+
+    .file-label {
+      display: inline-block;
+      cursor: pointer;
+      margin-top: 16px;
+      padding: 10px 16px;
+      border: 1px solid var(--bənövşəyi);
+      border-radius: 25px;
+      background: var(--kağız);
+      color: var(--bənövşəyi);
+      text-align: center;
+    }
+
+    .file-label:hover {
+      background: #eee1d6;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    /* Musiqi */
+
+    .music-card {
+      max-width: 650px;
+      margin: auto;
+      padding: 28px;
+      border: 1px solid #e0cdb6;
+      border-radius: 15px;
+      background: var(--kağız);
+      text-align: center;
+      box-shadow: 0 10px 25px #3826400d;
+    }
+
+    .music-icon {
+      font-size: 3rem;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    /* Müəllif */
+
+    .about-card {
+      max-width: 800px;
+      margin: auto;
+      padding: 28px;
+      border-left: 4px solid var(--qızılı);
+      border-radius: 8px;
+      background: var(--kağız);
+      box-shadow: 0 10px 25px #3826400d;
+    }
+
+    .about-card p + p {
+      margin-top: 15px;
+    }
+
+    /* Əlaqə */
+
+    .contact-form {
+      max-width: 650px;
+      margin: auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #cbb8c6;
+      border-radius: 8px;
+      background: #fffdf9;
+      color: var(--mətn);
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: 2px solid var(--qızılı);
+    }
+
+    .contact-form button {
+      justify-self: start;
+    }
+
+    .email {
+      text-align: center;
+      overflow-wrap: anywhere;
+      margin-top: 22px;
+    }
+
+    footer {
+      padding: 25px 15px;
+      text-align: center;
+      background: var(--bənövşəyi);
+      color: #fff1dc;
+      border-top: 3px solid var(--qızılı);
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .nav-links {
+        gap: 7px 13px;
+      }
+
+      .nav-links a {
+        font-size: .84rem;
+      }
+
+      .hero {
+        min-height: 400px;
+        padding: 55px 17px;
+      }
+
+      .section {
+        padding: 45px 14px;
+      }
+
+      .book-page {
+        padding: 27px 20px;
+        min-height: 380px;
+      }
+
+      .controls {
+        gap: 8px;
+      }
+
+      .controls .button {
+        padding: 9px 12px;
+        font-size: .85rem;
+      }
+
+      .cover {
+        min-height: 440px;
+      }
+
+      .music-card, .about-card {
+        padding: 21px 17px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header class="header">
+    <nav class="nav" aria-label="Əsas menyu">
+      <a class="logo" href="#ana">Ağamirzə Cəfərli</a>
 
-<header class="hero" id="ana">
-  <div>
-    <div class="kicker">Şair · Söz · Nəğmə</div>
-    <h1>Ağamirzə Cəfərli</h1>
-    <div class="tagline">Şeirin, sözün və nəğmənin dünyası</div>
-  </div>
-</header>
+      <div class="nav-links">
+        <a href="#ana">Ana səhifə</a>
+        <a href="#seirler">Şeirlər</a>
+        <a href="#kitab">Kitab</a>
+        <a href="#musiqi">Musiqi</a>
+        <a href="#haqqinda">Müəllif</a>
+        <a href="#elaqe">Əlaqə</a>
+      </div>
+    </nav>
+  </header>
 
-<nav>
-  <a href="#ana">Ana səhifə</a>
-  <a href="#seirler">Şeirlər</a>
-  <a href="#musiqiler">Musiqilər</a>
-  <a href="#kitablar">Kitablar</a>
-  <a href="#haqqimda">Haqqımda</a>
-  <a href="#elaqe">Əlaqə</a>
-</nav>
+  <main>
+    <section class="hero" id="ana">
+      <div class="hero-inner">
+        <img id="heroPhoto" class="hero-photo" alt="Müəllifin şəkli">
 
-<main>
+        <div class="eyebrow">Sözün və duyğunun ünvanı</div>
+        <h1>Ağamirzə Cəfərli</h1>
 
-<section id="giris">
-  <p class="intro">
-    Sözün qəlbdən doğulduğu, misranın duyğuya,
-    duyğunun isə nəğməyə çevrildiyi ədəbi məkan.
-    Ağamirzə Cəfərlinin yaradıcılığına xoş gəlmisiniz.
-  </p>
-</section>
+        <p>
+          Hər misrada bir duyğu, hər şeirdə bir ömür,
+          hər sözdə qəlbdən gələn bir səs.
+        </p>
 
-<section id="seirler" class="poetry-section">
-  <h2>📖 Şeir dünyası</h2>
-  <p class="poetry-author">Ağamirzə Cəfərli</p>
+        <a class="button" href="#seirler">Şeirləri oxu</a>
+        <a class="button" href="#kitab">Kitabla tanış ol</a>
+      </div>
+    </section>
 
-  <div class="open-book">
-    <div class="book-page">
-      <span id="page-number">1 / 6</span>
-      <h3 id="poem-title">Darıxıram siz çün</h3>
-      <div id="poem-text" class="poem-text"></div>
-      <p class="book-author">Müəllif: Ağamirzə Cəfərli</p>
-    </div>
-  </div>
+    <section class="section" id="seirler">
+      <div class="container">
+        <h2 class="section-title">Şeir dünyası</h2>
+        <div class="ornament">❧ ❦ ❧</div>
 
-  <div class="book-controls">
-    <button id="prev-poem" type="button">← Əvvəlki</button>
-    <button id="next-poem" type="button">Növbəti →</button>
-  </div>
-</section>
+        <p class="intro">
+          Şeirləri oxu, misraları hiss et və istəsən, onları səsləndirərək dinlə.
+        </p>
 
-<section id="musiqiler">
-  <h2>🎵 Musiqilər</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Şeir və nəğmə</h3>
-      <p>Ağamirzə Cəfərlinin söz dünyası və nəğmələri.</p>
-      <p>Bu bölməyə musiqi bağlantıları əlavə edilə bilər.</p>
-    </div>
-    <div class="card">
-      <h3>Dinləmələr</h3>
-      <p>Mahnı və ifaların bağlantıları burada yerləşdirilə bilər.</p>
-    </div>
-  </div>
-</section>
+        <div class="book" id="book">
+          <article class="book-page" aria-live="polite">
+            <div class="page-number" id="pageNumber">1-ci şeir</div>
+            <h3 class="poem-title" id="poemTitle"></h3>
+            <pre class="poem-text" id="poemText"></pre>
+            <div class="poem-author">Müəllif: Ağamirzə Cəfərli.</div>
+          </article>
+        </div>
 
-<section id="kitablar">
-  <h2>📚 Kitablar</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Kitablar və nəşrlər</h3>
-      <p>Şairin kitabları, nəşrləri və ədəbi irsi haqqında məlumatlar.</p>
-      <p>Kitab üz qabıqları və sifariş bağlantıları hazır olduqda əlavə edilə bilər.</p>
-    </div>
-  </div>
-</section>
+        <div class="controls">
+          <button class="button dark" id="prevBtn" type="button">← Əvvəlki</button>
+          <button class="button dark" id="readBtn" type="button">🔊 Səsləndir</button>
+          <button class="button dark" id="pauseBtn" type="button">⏸ Fasilə</button>
+          <button class="button dark" id="stopBtn" type="button">■ Dayandır</button>
+          <button class="button dark" id="nextBtn" type="button">Növbəti →</button>
+        </div>
 
-<section id="haqqimda">
-  <h2>Haqqımda</h2>
-  <div class="bio">
-    <p>
-      Ağamirzə Cəfərli — şair. Bu səhifə onun şeirlərini,
-      sözə və sənətə bağlılığını oxucularla bölüşmək üçün hazırlanıb.
-    </p>
-    <p>
-      Saytda müəllifin şeirləri, musiqiləri və kitabları haqqında
-      məlumatlar toplanır.
-    </p>
-  </div>
-</section>
+        <p class="status" id="bookStatus" aria-live="polite">1 / 6</p>
+        <p class="hint">Telefonda şeiri dəyişmək üçün səhifəni sağa və ya sola sürüşdür.</p>
+      </div>
+    </section>
 
-<section id="elaqe">
-  <h2>Əlaqə</h2>
-  <div class="bio">
-    <p>
-      Əlaqə məlumatları və sosial şəbəkə bağlantıları burada yerləşdirilə bilər.
-    </p>
-  </div>
-</section>
+    <section class="section alt" id="kitab">
+      <div class="container">
+        <h2 class="section-title">Kitabım</h2>
+        <div class="ornament">✿ ❦ ✿</div>
 
-</main>
+        <p class="intro">
+          Nəsr və poeziyanın vəhdətində bir ömür hekayəsi.
+        </p>
 
-<footer>
-  <p>© Ağamirzə Cəfərli — Bütün hüquqlar qorunur.</p>
-</footer>
+        <div class="cover-wrap">
+          <div class="cover">
+            <div class="cover-ornament">✿ ❧ ✿</div>
 
-<script>
-const poems = [
-{
-title: "Darıxıram siz çün",
-text: `Darıxıram siz çün, hər an yanımda,
-Çəkiləndə şanlı adınız, şəhidlər.
-Bu həsrətinizdən mənim qanımda
-Çox yandırıb-yaxır odunuz, şəhidlər.
+            <img id="coverPhoto" class="cover-photo" alt="Kitab üz qabığında müəllif">
 
-O an uşaq kimi ağlar gözlərim,
-Anlamır, sizləri məndən istəyir.
-Nə edəcəyimdən əsir dizlərim,
-Aciz qaldığımdan ürək göynəyir.
+            <div>
+              <h3>Qələm də üşüyürdü...</h3>
+              <p class="cover-subtitle">
+                Nəsr və poeziyanın vəhdətində bir ömür hekayəsi
+              </p>
+            </div>
 
-Göstərirəm behişt məzarınızı,
-Bu ağlar gözlərim ovunar deyə.
-Yenə qış görürlər ilk baharınızı,
-Ağlaşırlar mənə: “Dur, axtar!” deyə.
+            <div class="cover-ornament">❦ ✿ ❦</div>
+            <div class="cover-author">Ağamirzə Cəfərli</div>
+          </div>
 
-Bilmirəm nə edim, necə mən edim,
-Gözlərim axtarıb ağlamasınlar.
-Başımı götürüb haraya gedim,
-Ağrılar ürəyimi dağlamasınlar.
+          <label class="file-label" for="authorPhoto">
+            📷 Müəllifin şəklini seç
+          </label>
+          <input type="file" id="authorPhoto" accept="image/*">
 
-Çölümün gözlərin ovundurardım,
-İçimin gözü də ürəyimdədir.
-Göstərib sizləri rahat olardım,
-Yanğımın közüdür ürəyimdədir.
+          <p class="note">
+            Seçilən şəkil bu cihazda önizləmə üçün görünəcək.
+          </p>
+        </div>
+      </div>
+    </section>
 
-Yarısı qazi, yarısı şəhid torpağımın,
-Sizlərsiniz fəxri, uca övladı.
-Bir daha enməyən yüksək bayrağımın
-Sülh dilinə yatan sevimli adı.
+    <section class="section" id="musiqi">
+      <div class="container">
+        <h2 class="section-title">Musiqi guşəsi</h2>
+        <div class="ornament">♫ ❦ ♫</div>
 
-Bütün gözəlliklər yalnız sizsiniz,
-Sizi bir an düşünüb anmamaq olmur.
-Göz yaşından artan bir dənizsiniz,
-Sahilinizə yan almamaq olmur.`
-},
-{
-title: "O gecə yuxuma",
-text: `O gecə yuxuma qəmli girmişdin,
-Nigaran libası geyib gəlmişdin.
-Və belə bir cümlə qurub demişdin:
-“Balalarıma baxın”, ey nur şəhidim!
+        <p class="intro">
+          Musiqinin müşayiəti ilə şeir dünyasına səyahət et.
+        </p>
 
-O gündən söndürə bilmir göz yaşım,
-Gözümün giləsi yanır, şəhidim.
-Ömrümə gətirir bir soyuq qışı,
-Qanım, damarlarım donur, şəhidim.
+        <div class="music-card">
+          <div class="music-icon">🎵</div>
+          <h3>Dinlə və duy</h3>
+          <p>Musiqi faylını seçərək səsləndirə bilərsən.</p>
 
-Bir idim, bölünüb olmuşam iki,
-İçimdə elə bir külək qopur ki,
-Hirsli-hirsli çıxıb içimdən sanki,
-Ömrümün güllərin yonur, şəhidim.
+          <label class="file-label" for="musicFile">🎶 Musiqi faylı seç</label>
+          <input type="file" id="musicFile" accept="audio/*">
 
-Etdiyin qəm çırpır məni hey dağa,
-Yanğım meydan oxuyur axan bulağa.
-Sanki bülbül küsür saldığım bağa,
-Yüz dənə vəhşi quş qonur, şəhidim.
+          <audio id="audioPlayer" controls preload="metadata">
+            Brauzeriniz audio səsləndirməni dəstəkləmir.
+          </audio>
 
-Bəziləri sizi unudan zaman,
-Çökür ürəyimin dağına duman.
-Ağlayır içində Azərbaycan,
-Qəlbimin telləri sınır, şəhidim.
+          <p class="note" id="musicStatus" aria-live="polite">
+            Hələ musiqi faylı seçilməyib.
+          </p>
+        </div>
+      </div>
+    </section>
 
-Şəhid övladını darda görəndə,
-Ürəyim parçalanır o zaman mənim də.
-Şəhidi sevməyən ana Vətəndə,
-Şəhid övladını nə qanır, şəhidim?
+    <section class="section alt" id="haqqinda">
+      <div class="container">
+        <h2 class="section-title">Müəllif haqqında</h2>
+        <div class="ornament">❧ ❦ ❧</div>
 
-Şəhidim, nigaran qalma, nə olar,
-Sizin övladınızı sevənlər də var.
-“Meşə qurdsuz olmaz”, deyib atalar,
-Sizi sevənlər sizi anır, şəhidim.`
-},
-{
-title: "Həyat öyrədir",
-text: `Hanı səhər şehi, xoş narın yağış?
-Yaz soyuq olmağı qışa öyrədir.
-Sinənin altında yum-yumşaq ürək
-Hər gün bərkiməyi daşa öyrədir.
+        <div class="about-card">
+          <p>
+            <strong>Ağamirzə Cəfərli</strong> şeirlərində sevgi və ayrılığa,
+            həyatın sınaqlarına, Vətənə və şəhidlərin xatirəsinə yer verən müəllifdir.
+          </p>
 
-Alovdan keçməyi, sudan keçməyi,
-Həyatın qarasın, ağın seçməyi,
-Min ölçüb, bir dəfə kəsib-biçməyi
-Əqlin müdrikliyi başa öyrədir.
+          <p>
+            Bu səhifə onun şeirlərini bir araya toplamaq, oxuculara çatdırmaq
+            və yaradıcılığı ilə tanış olmaq üçün hazırlanıb.
+          </p>
 
-Birdən niyə belə dəyişdi dövran?
-Hanı haqq, hanı o tərəzi-mizan?
-Közü qaladığın ocaqdır salan,
-Tutuşmağı közə maşa öyrədir.
+          <p>
+            Hər şeirdə bir duyğu, hər misrada qəlbin ayrı bir səsi yaşayır.
+          </p>
+        </div>
+      </div>
+    </section>
 
-Həyata arxayın olub gəlirsən,
-Ürəyin göz yaşını alıb silirsən.
-Gülməklə yanaşı özün bilirsən,
-Tale ağlamağı qoşa öyrədir.
+    <section class="section" id="elaqe">
+      <div class="container">
+        <h2 class="section-title">Əlaqə</h2>
+        <div class="ornament">✉ ❦ ✉</div>
 
-Öyrədir, öyrənmir hələ bu dünya,
-Bu dünya hər şeyi çox bilir guya.
-Öyrətdiyi nədir, gör hələ, ayə?
-Pislik eləməyi xoşa öyrədir.`
-},
-{
-title: "Oğul Vətəninə şəhid olmasa",
-text: `Bitən çiçəkləri bahar soldurar,
-Çiçək qərənfilə baxıb solmasa,
-Bir ədəd qərənfil bitirməz torpaq,
-Oğul Vətəninə şəhid olmasa.
+        <p class="intro">
+          Rəyini, fikrini və ya mesajını göndər.
+        </p>
 
-Demə, ey şəhidim, nəyə qəmlisən?
-Kirpiyin nəmlidir, gözün nəmlidir.
-Axı sən mənimçün çox sevimlisən,
-Gözdən yaş süzülməz, ürək dolmasa.
+        <form class="contact-form" id="contactForm">
+          <input
+            type="text"
+            id="senderName"
+            placeholder="Adınız"
+            autocomplete="name"
+            required
+          >
 
-Siz şəhid olmusunuz bizlərə görə,
-Vətənçün yaş tökən gözlərə görə.
-Yaşamaq zülm olar sizlərə görə,
-Ürəkdə bir arzu, sevinc qalmasa.
+          <input
+            type="email"
+            id="senderEmail"
+            placeholder="E-poçt ünvanınız"
+            autocomplete="email"
+            required
+          >
 
-Sizinlə sönübdür yanan çırağım,
-Məcnun tək səhraya qaçıb marağım.
-Könlüm evi yanmaz, sönər yanığım,
-Həsrətiniz qəlbimə atəş salmasa.`
-},
-{
-title: "Şəhid oğlum",
-text: `Gecələr yuxumu gözümdən alıb,
-Xəyala döndərib sənsiz ömrümü.
-Ürəyimin içində qəm yuva salıb,
-Mən sənin yanına gələnə kimi.
+          <textarea
+            id="senderMessage"
+            placeholder="Mesajınızı yazın..."
+            required
+          ></textarea>
 
-Hər dəfə bağrıma bassam da səni,
-Mən səndən ayrılıb doya bilmirəm.
-Şəhid oğlum, sən yat, düşünmə məni,
-Sənsiz balınca baş qoya bilmirəm.
+          <button class="button" type="submit">Mesajı göndər</button>
+        </form>
 
-Qoyuram şəklini sinəmin üstə,
-O nur camalından ürəyim də öpsün.
-Bəxti kəm taleyim məni qəfəsdə
-Sıxırsa, üzümü kəfənlə örtsün.`
-},
-{
-title: "Şəhid qardaşım",
-text: `Əziz qazi qardaşımız Həsənov Pərvinin dilindən
+        <p class="email">
+          E-poçt:
+          <a href="mailto:ceferovağamirzə100@gmail.com">ceferovağamirzə100@gmail.com</a>
+        </p>
 
-Mən sizi düşünüb, sizi anıram,
-Ürəyim od tutub alışır, şəhid.
-Görüşə gəlməyə qanadlanıram,
-Həsrət uçuşuma qarışır, şəhid.
+        <p class="note">
+          Mesaj göndər düyməsi cihazının e-poçt proqramını açır.
+        </p>
+      </div>
+    </section>
+  </main>
 
-Xoş gün bağışladız bəxti küsgünə,
-Otuz il həsrətə ağlayan köçkünə.
-Həmişə yandınız Vətən köksünə,
-Yenə də o alov tutuşur, şəhid.
+  <footer>
+    <p>© <span id="year"></span> Ağamirzə Cəfərli</p>
+    <p>Hər misrada bir ömür, hər sözdə bir duyğu.</p>
+  </footer>
 
-Vətən sevgisidir ürəyinizdəki,
-Qeyrət torpağına atıbdır kökü.
-Cənnət şəhidlərə yaraşan təki,
-Cənnət məkanına yaraşır, şəhid.
+  <script>
+    "use strict";
 
-Mənə o şəhidlik qismət olmadı,
-Qismət məni niyə yada salmadı?
-İçimdə ruhuma vurub bu odu,
-Ürəyim mənimlə dalaşır, şəhid.
+    const poems = [
+      {
+        title: "Mən elə hay-küyəm, dəlisov seləm",
+        text: `mən elə hay küyəm dəlisov seləm
+qarşıma çıxanı qıyıb aparram.
+olub ötənləri xatirələrdən
+gözümün yaşıyla yuyub aparram.
 
-Gizlədə bilmirəm göz yaşlarımı,
-Ağlayıram şəhid qardaşlarımı.
-Ağlayan çaylarmı, təkcə daşlarmı?
-Yer-göy həsrətindən ağlaşır, şəhid.
+💖   💖   💖
 
-Gəlmişəm məzarın üstünə, dilim
-Ancaq söz tutmayır, danışım, gülüm.
-Gedərəm özümdən hara, nə bilim?
-Ürəyim sizinlə danışır, şəhid.`
-}
-];
+Oynama bu qədər qürurum ilə
+anla ki  kövrəyəm hislərə qarşı.
+Baxma, hərdən susub fikrə gedirəm,
+qanım qaynamır yad səslərə qarşı.
 
-let currentPoem = 0;
+💖   💖   💖
 
-function showPoem(index) {
-  currentPoem = index;
+səni mən sevdiyim günü əzizim
+ürəy məndən qabağ aşıb daşıbdı.
+bəlkə mən yad biri olaram bir gün
+o isə səninlə doğmalaşıbdı.
 
-  document.getElementById("poem-title").textContent = poems[index].title;
-  document.getElementById("poem-text").textContent = poems[index].text;
-  document.getElementById("page-number").textContent =
-    (index + 1) + " / " + poems.length;
+💖   💖   💖
 
-  document.getElementById("prev-poem").disabled = index === 0;
-  document.getElementById("next-poem").disabled =
-    index === poems.length - 1;
+ürəymin arzusun puç etmə daha
+könlümün evinə səadət gətir
+məni sevməsəndə ürəymi düşün
+Yola get ömrümdən ürəyə xətir.`
+      },
 
-  document.getElementById("seirler").scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-}
+      {
+        title: "Heç yola getmədi məndən bu taley",
+        text: `Taley məni bir gün birnə yar etdi
+Sonra bu dünyanı mənə dar etdi.
+Ürəyim ağlayıb ahuzar etdi
+Bir kimsə duymadı sızıldadım hey
+Heç yola getmədi məndən bu taley.
 
-document.getElementById("prev-poem").addEventListener("click", function () {
-  if (currentPoem > 0) showPoem(currentPoem - 1);
-});
+💘 💘 💘
 
-document.getElementById("next-poem").addEventListener("click", function () {
-  if (currentPoem < poems.length - 1) showPoem(currentPoem + 1);
-});
+Nə idi günahım bu gənc çağımda
+Hissimdən oynadı eşq can bağımda.
+Son dəfə dediyi söz dodağımda
+Qəm mahnısı oldu ifa etdi ney
+Heç yola getmədi məndən bu taley.
 
-showPoem(0);
-</script>
+💘 💘 💘
 
+Hər gün danışdığım sevdiyim gözəl
+Mən nədən bilərdim olacaq əcəl.
+Bu ilk baharıma gələcək xəzəl
+Payıza dönəcək qəlbimdə hər şey
+Heç yola getmədi məndən bu taley.
+
+💘 💘 💘
+
+Yarı can sağlığı qədər sevirdim
+Hər axşam sevirdim səhər sevirdim.
+Sevməyən bilməssən nətər sevirdim
+Ov edib əlimdən aldı onu ley
+Heç yola getmədi məndən bu taley.
+
+💘 💘 💘
+
+Bir kərə aşiqin dosdu olarsız
+Kirlənmiş sevgimin tozun alarsız
+Bayramda toylarda yada salarsız
+Qaldırarsız məzlum aşiqlərə mey
+Heç yola getmədi məndən bu taley.`
+      },
+
+      {
+        title: "Həyat öyrədir",
+        text: `Hanı səhər şehi,xoş narın yağış,
+yaz soyuq olmağı qışa öyrədir.
+sinənin altında yum-yumşaq ürək
+hər gün bərkiməyi daşa öyrədir.
+
+📗 📗 📗
+
+Alovdan keçməyi sudan keçməyi
+həyatın qarasın ağın seçməyi
+min ölşüb bir dəfə kəsib biçməyi
+Əqil müdrük olub başa öyrədir
+
+📗 📗 📗
+
+birdən niyə elə dəyişdi dövran
+hanı haq hanı o tərəzi mizan.
+közü qaladığın ocaqdır salan
+tutuşmağı közə maşa öyrədir
+
+📗 📗 📗
+
+Həyata arxayın olub gəlirsən
+ürəyin göz yaşın alıb silirsən
+gülməknən yanaşı özün bilirsən
+taley ağlamağı qoşa öyrədir.
+
+📗 📗 📗
+
+öyrədir öyrənmir hələ bu dünya
+bu dünya hər şeyi çox bilir guya.
+öyrətdiyi nədir gör hələ a'ya,
+pislik eləməyi xoşa öyrədir.`
+      },
+
+      {
+        title: "Oğul Vətəninə şəhid olmasa",
+        text: `Şimşək çaxışını sizdən öyrənib
+hər şeyə mərdliyi öyrədən şəhid
+Qartal baxışını sizdən öyrənib
+Baxmaqla vəhşini ram edən şəhid.
+
+📗 📗 📗
+
+polad da sizlərdən möhkəmlənibdi
+güllə də səsnizdən qorxub dinibdi.
+ən güclü şeyləri sizlər yenibdi
+vətən döyüşünə şir gedən şəhid.
+
+📗 📗 📗
+
+bulaqlar sizlərə axıb dayanmır,
+dağ ucalığnızı görüb uzanmır.
+təbiyət də payızda rəngə boyanmır
+sizlər olan gündən gül bitən şəhid.
+
+📗 📗 📗
+
+tarix yazmısınız alın xətdinə
+şərəf çəkmisiniz yurd sərhəddinə
+düşmanın keçməyə onu həddi nə
+siznən qürur duyur bu vətən,şəhid`
+      },
+
+      {
+        title: "Şəhid oğlum",
+        text: `gecələr yuxumu gözümdən alıb
+xəyala döndərib sənsiz ömrümü.
+ürəymin içində qəm yuva salıb
+mən sənin yanına gələnə kimi
+
+😭 😭 😭
+
+Hər dəfə bağrıma bassamda səni
+mən səndən ayrılıb doya bilmirəm.
+şəhid oğulum sən yat düşünmə məni
+sənsiz balınca baş qoya bilmirəm.
+
+😭 😭 😭
+
+Qoyuram şəklini sinəmin üsdə
+O nur camalından ürək də öpsün
+bəxti kəm taleyim məni qəfəsdə
+sıxırsa,üzümü kəfənlə örtsün.`
+      },
+
+      {
+        title: "Şəhid qardaşım",
+        text: `Ürəyimə çəkilib dağ,
+Şəhid gəlib vətənimə.
+Yağ ey yağış yağ birdə yağ
+alov düşüb bədənimə.
+
+🌹 🌹 🌹
+
+Ana ağlar üzü solar
+Bacı ağlar saçın yolar
+tez yağ yağış,yağ nə olar
+solmamış yağ bitənimə.
+
+🌹 🌹 🌹
+
+qıyma olsun gözlər ümman
+Bu ümmanda boğlar insan
+yağış sən yağ düşsün damlan
+bağ baxçama çəmənimə.`
+      }
+    ];
+
+    const titleEl = document.getElementById("poemTitle");
+    const textEl = document.getElementById("poemText");
+    const pageEl = document.getElementById("pageNumber");
+    const statusEl = document.getElementById("bookStatus");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const readBtn = document.getElementById("readBtn");
+    const pauseBtn = document.getElementById("pauseBtn");
+    const stopBtn = document.getElementById("stopBtn");
+
+    let currentPoem = 0;
+
+    function stopSpeech() {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+      pauseBtn.textContent = "⏸ Fasilə";
+    }
+
+    function showPoem(index) {
+      if (index < 0 || index >= poems.length) return;
+
+      stopSpeech();
+      currentPoem = index;
+
+      titleEl.textContent = poems[index].title;
+      textEl.textContent = poems[index].text;
+      pageEl.textContent = (index + 1) + "-ci şeir";
+      statusEl.textContent = (index + 1) + " / " + poems.length;
+
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === poems.length - 1;
+    }
+
+    prevBtn.addEventListener("click", function () {
+      showPoem(currentPoem - 1);
+    });
+
+    nextBtn.addEventListener("click", function () {
+      showPoem(currentPoem + 1);
+    });
+
+    readBtn.addEventListener("click", function () {
+      if (!("speechSynthesis" in window) ||
+          !("SpeechSynthesisUtterance" in window)) {
+        alert("Bu brauzer səsləndirməni dəstəkləmir.");
+        return;
+      }
+
+      stopSpeech();
+
+      const speech = new SpeechSynthesisUtterance(
+        poems[currentPoem].title + ". " + poems[currentPoem].text +
+        ". Müəllif: Ağamirzə Cəfərli."
+      );
+
+      speech.lang = "az-AZ";
+      speech.rate = 0.85;
+
+      speech.onend = function () {
+        pauseBtn.textContent = "⏸ Fasilə";
+      };
+
+      speech.onerror = function (event) {
+        if (event.error !== "canceled" &&
+            event.error !== "interrupted") {
+          statusEl.textContent =
+            "Səsləndirmə alınmadı. Brauzerin səs imkanlarını yoxla.";
+        }
+      };
+
+      window.speechSynthesis.speak(speech);
+    });
+
+    pauseBtn.addEventListener("click", function () {
+      if (!("speechSynthesis" in window)) return;
+
+      const synth = window.speechSynthesis;
+
+      if (synth.speaking && !synth.paused) {
+        synth.pause();
+        pauseBtn.textContent = "▶ Davam et";
+      } else if (synth.paused) {
+        synth.resume();
+        pauseBtn.textContent = "⏸ Fasilə";
+      }
+    });
+
+    stopBtn.addEventListener("click", stopSpeech);
+
+    // Telefon ekranında sola və sağa sürüşdürmə
+    const book = document.getElementById("book");
+    let startX = 0;
+    let startY = 0;
+
+    book.addEventListener("touchstart", function (event) {
+      const touch = event.changedTouches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+    }, { passive: true });
+
+    book.addEventListener("touchend", function (event) {
+      const touch = event.changedTouches[0];
+      const deltaX = touch.clientX - startX;
+      const deltaY = touch.clientY - startY;
+
+      if (Math.abs(deltaX) < 55 ||
+          Math.abs(deltaX) < Math.abs(deltaY) * 1.2) {
+        return;
+      }
+
+      if (deltaX < 0 && currentPoem < poems.length - 1) {
+        showPoem(currentPoem + 1);
+      } else if (deltaX > 0 && currentPoem > 0) {
+        showPoem(currentPoem - 1);
+      }
+    }, { passive: true });
+
+    // Şəkli bu cihazda göstərmək
+    const photoInput = document.getElementById("authorPhoto");
+    const heroPhoto = document.getElementById("heroPhoto");
+    const coverPhoto = document.getElementById("coverPhoto");
+    let photoURL = null;
+
+    photoInput.addEventListener("change", function () {
+      const file = this.files && this.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith("image/")) {
+        alert("Zəhmət olmasa, şəkil faylı seç.");
+        this.value = "";
+        return;
+      }
+
+      if (photoURL) URL.revokeObjectURL(photoURL);
+      photoURL = URL.createObjectURL(file);
+
+      heroPhoto.src = photoURL;
+      coverPhoto.src = photoURL;
+      heroPhoto.classList.add("show");
+      coverPhoto.classList.add("show");
+    });
+
+    // Musiqi faylını bu cihazda səsləndirmək
+    const musicInput = document.getElementById("musicFile");
+    const audioPlayer = document.getElementById("audioPlayer");
+    const musicStatus = document.getElementById("musicStatus");
+    let audioURL = null;
+
+    musicInput.addEventListener("change", function () {
+      const file = this.files && this.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith("audio/")) {
+        alert("Zəhmət olmasa, musiqi faylı seç.");
+        this.value = "";
+        return;
+      }
+
+      if (audioURL) URL.revokeObjectURL(audioURL);
+      audioURL = URL.createObjectURL(file);
+
+      audioPlayer.src = audioURL;
+      audioPlayer.load();
+      musicStatus.textContent = "Seçilmiş musiqi: " + file.name;
+    });
+
+    // Əlaqə forması e-poçt proqramını açır
+    document.getElementById("contactForm").addEventListener(
+      "submit",
+      function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("senderName").value.trim();
+        const email = document.getElementById("senderEmail").value.trim();
+        const message = document.getElementById("senderMessage").value.trim();
+
+        if (!name || !email || !message) {
+          alert("Zəhmət olmasa, bütün xanaları doldur.");
+          return;
+        }
+
+        const recipient = "ceferovağamirzə100@gmail.com";
+        const subject = encodeURIComponent("Saytdan mesaj — " + name);
+        const body = encodeURIComponent(
+          "Göndərən: " + name + "\n" +
+          "E-poçt: " + email + "\n\n" +
+          "Mesaj:\n" + message
+        );
+
+        window.location.href =
+          "mailto:" + recipient +
+          "?subject=" + subject +
+          "&body=" + body;
+      }
+    );
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    showPoem(0);
+  </script>
 </body>
 </html>
