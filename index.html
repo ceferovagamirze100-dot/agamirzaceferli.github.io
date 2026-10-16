@@ -1,1275 +1,451 @@
-HTML
 
-<!DOCTYPE html>
-<html lang="az">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#28134b">
-  <title>Ağamirzə Cəfərli | Şeirlər və Media</title>
-  <style>
-    :root {
-      --bg: #160d28;
-      --panel: #281943;
-      --gold: #f4cc77;
-      --text: #fff8ed;
-      --muted: #d3c6e4;
-      --border: #574071;
-    }
+<section id="elektron-kitab" class="poet-book">
+  <h2 class="book-heading">Ağamirzə Cəfərlinin şeir dünyası</h2>
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, sans-serif;
-      line-height: 1.65;
-    }
-    header {
-      padding: 38px 18px;
-      text-align: center;
-      background: linear-gradient(140deg, #422269, #170d29);
-      border-bottom: 2px solid var(--gold);
-    }
-    header h1 {
-      margin: 0;
-      color: var(--gold);
-      font-size: clamp(28px, 6vw, 44px);
-    }
-    header p { color: var(--muted); }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px;
-      background: #211436;
-      position: sticky;
-      top: 0;
-      z-index: 5;
-    }
-    nav a {
-      color: var(--gold);
-      text-decoration: none;
-      padding: 7px 10px;
-      border-radius: 8px;
-    }
-    nav a:hover { background: var(--panel); }
-    main { width: min(1000px, 92%); margin: auto; }
-    section { padding: 30px 0; }
-    h2 { color: var(--gold); }
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
-      margin: 16px 0;
-      overflow-wrap: anywhere;
-    }
-    .hero { text-align: center; padding: 50px 10px 30px; }
-    .hero p { max-width: 650px; margin: 10px auto; }
-    .button, button {
-      display: inline-block;
-      border: 0;
-      border-radius: 9px;
-      background: var(--gold);
-      color: #241334;
-      font-weight: bold;
-      padding: 11px 16px;
-      cursor: pointer;
-      text-decoration: none;
-      margin: 5px 3px;
-    }
-    button.secondary { background: #493363; color: white; }
-    button.danger { background: #a83f55; color: white; }
-    button:disabled { opacity: .55; cursor: wait; }
-    input, textarea, select {
-      display: block;
-      width: 100%;
-      margin: 7px 0 15px;
-      padding: 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      background: #170e28;
-      font: inherit;
-    }
-    input[type="file"] { padding: 9px; }
-    label { display: block; color: var(--muted); }
-    .muted, small { color: var(--muted); }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 14px;
-    }
-    .media-card img, .media-card video {
-      width: 100%;
-      max-height: 360px;
-      object-fit: contain;
-      background: #10091b;
-      border-radius: 9px;
-    }
-    .media-card audio { width: 100%; }
-    .status { color: var(--gold); font-size: .95rem; }
-    .hidden { display: none !important; }
-    .notice {
-      padding: 12px;
-      border-left: 3px solid var(--gold);
-      background: #211436;
-      border-radius: 6px;
-    }
-    footer {
-      text-align: center;
-      padding: 28px 12px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-    }
-    #message { white-space: pre-wrap; }
-  </style>
-</head>
+  <div class="book" id="poetBook">
+    <!-- KİTABIN ÜZ QABIĞI -->
+    <div class="cover" id="poetCover">
+      <div class="cover-frame">
+        <div class="sun"></div>
+        <div class="hill hill-one"></div>
+        <div class="hill hill-two"></div>
+        <div class="forest">🌲　🌳　🌲　🌳　🌲</div>
+        <div class="flowers">🌼 🌷 🌿 🌹 🌼 🌸</div>
 
-<body>
-<header>
-  <h1>Ağamirzə Cəfərli</h1>
-  <p>Şeirlər • Sözün gücü • Xatirələr • Media</p>
-</header>
+        <!-- Şairin stilizə olunmuş təsviri -->
+        <div class="writer">
+          <div class="head"></div>
+          <div class="hair"></div>
+          <div class="body"></div>
+          <div class="arm"></div>
+          <div class="paper">✍</div>
+          <div class="book-desk"></div>
+        </div>
 
-<nav>
-  <a href="#home">Ana səhifə</a>
-  <a href="#poems">Şeirlər</a>
-  <a href="#gallery">Media qalereyası</a>
-  <a href="#upload">Fayl göndər</a>
-  <a href="#about">Müəllif</a>
-  <a href="#admin">İdarəetmə</a>
-</nav>
+        <div class="cover-words">
+          <p class="cover-label">ŞEİRLƏR VƏ XATİRƏLƏR</p>
+          <h3>Ağamirzə Cəfərli</h3>
+          <p>Təbiətin qoynunda doğulan misralar</p>
+          <button id="openPoetBook" class="book-btn">
+            Kitabı aç 📖
+          </button>
+        </div>
 
-<main>
-  <section id="home" class="hero">
-    <h2>Şeirlərin və xatirələrin ünvanı</h2>
-    <p>
-      Ağamirzə Cəfərlinin yaradıcılığına həsr olunmuş səhifəyə xoş gəlmisiniz.
-      Şeirləri oxuyun, audio və videolara baxın, öz faylınızı da göndərin.
-    </p>
-    <a class="button" href="#poems">Şeirlərə bax</a>
-    <a class="button" href="#gallery">Qalereyanı aç</a>
-  </section>
-
-  <section id="poems">
-    <h2>Şeirlər</h2>
-    <div class="panel">
-      <p>
-        Şeirlərini bu hissədə yerləşdirə bilərsən. Əvvəlki saytdakı şeirlərin
-        mətnlərini burada yenidən əlavə et; bu nümunə kod həmin mətnləri
-        avtomatik bərpa etmir.
-      </p>
-      <p class="muted">
-        Şeirlərin mətnini sonradan əlavə etmək üçün bu bölmədə ayrıca şeir
-        kartları yarada bilərsən.
-      </p>
-    </div>
-  </section>
-
-  <section id="gallery">
-    <h2>İctimai media qalereyası</h2>
-    <p class="muted">
-      Burada yalnız müəllif tərəfindən təsdiqlənmiş fayllar göstərilir.
-    </p>
-    <div id="galleryMessage" class="notice">Qalereya yüklənir...</div>
-    <div id="galleryGrid" class="grid"></div>
-  </section>
-
-  <section id="upload">
-    <h2>Şəkil, audio və video göndər</h2>
-    <div class="panel">
-      <p>
-        Fayl əvvəlcə yoxlamaya göndərilir. Sən təsdiqləyənədək ictimai
-        qalereyada görünməyəcək.
-      </p>
-
-      <form id="uploadForm">
-        <label for="sender">Adın (istəyə bağlı)</label>
-        <input id="sender" maxlength="80" placeholder="Adınız">
-
-        <label for="caption">Faylın adı və ya qısa izahı</label>
-        <input id="caption" maxlength="150" required
-               placeholder="Məsələn: Şeir gecəsindən xatirə">
-
-        <label for="fileType">Faylın növü</label>
-        <select id="fileType" required>
-          <option value="image">Şəkil</option>
-          <option value="audio">Audio</option>
-          <option value="video">Video</option>
-        </select>
-
-        <label for="mediaFile">Faylı seç</label>
-        <input id="mediaFile" type="file" required
-               accept="image/jpeg,image/png,image/webp,audio/mpeg,audio/mp4,audio/wav,audio/ogg,video/mp4,video/webm">
-
-        <p class="muted">
-          Maksimum fayl ölçüsü: 50 MB. Yalnız özünüzə aid və ya paylaşmağa
-          icazəniz olan faylları göndərin.
-        </p>
-
-        <button id="uploadButton" type="submit">Yoxlamaya göndər</button>
-      </form>
-      <p id="message" role="status" aria-live="polite"></p>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>Müəllif haqqında</h2>
-    <div class="panel">
-      <p>
-        Ağamirzə Cəfərli — bu səhifə onun yaradıcılığını, şeirlərini və
-        yaradıcılıqla bağlı media materiallarını bir araya toplamaq üçündür.
-      </p>
-      <p class="muted">
-        Buraya müəllifin bioqrafiyasını, fotosunu və kitab məlumatlarını əlavə edə bilərsən.
-      </p>
-    </div>
-  </section>
-
-  <section id="admin">
-    <h2>Müəllifin idarəetmə bölməsi</h2>
-    <div class="panel">
-      <p class="muted">
-        Bu hissə yalnız Firebase-də administrator kimi müəyyən edilmiş hesab
-        ilə işləməlidir. İctimai istifadəçilər burada faylları təsdiqləyə bilməz.
-      </p>
-
-      <form id="loginForm">
-        <label for="adminEmail">Administrator e-poçtu</label>
-        <input id="adminEmail" type="email" autocomplete="username" required>
-
-        <label for="adminPassword">Şifrə</label>
-        <input id="adminPassword" type="password"
-               autocomplete="current-password" required>
-
-        <button id="loginButton" type="submit">Daxil ol</button>
-      </form>
-
-      <p id="adminMessage" role="status" aria-live="polite"></p>
-
-      <div id="adminPanel" class="hidden">
-        <p class="status">Administrator kimi daxil olmusunuz.</p>
-        <button id="refreshPending" type="button">Gözləyənləri yenilə</button>
-        <button id="logoutButton" type="button" class="secondary">Çıxış</button>
-        <h3>Təsdiq gözləyən fayllar</h3>
-        <div id="pendingGrid" class="grid"></div>
+        <div class="leaf-corner">🍂 🌿 🌹</div>
       </div>
     </div>
-  </section>
-</main>
 
-<footer>
-  <p>© Ağamirzə Cəfərli — Bütün hüquqlar qorunur.</p>
-</footer>
-
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
-
-<script>
-(() => {
-  "use strict";
-
-  // 1. Firebase Console-dan aldığın məlumatları bura yaz.
-  const firebaseConfig = {
-    apiKey: "BURAYA_API_KEY",
-    authDomain: "BURAYA_PROJECT_ID.firebaseapp.com",
-    projectId: "BURAYA_PROJECT_ID",
-    storageBucket: "BURAYA_STORAGE_BUCKET",
-    messagingSenderId: "BURAYA_MESSAGING_SENDER_ID",
-    appId: "BURAYA_APP_ID"
-  };
-
-  // 2. Firebase Authentication-dan administrator UID-ni yaz.
-  // Bu dəyər təhlükəsizlik qaydalarında da eyni olmalıdır.
-  const ADMIN_UID = "BURAYA_ADMIN_UID";
-
-  const $ = id => document.getElementById(id);
-  const allowedTypes = {
-    image: ["image/jpeg", "image/png", "image/webp"],
-    audio: ["audio/mpeg", "audio/mp4", "audio/wav", "audio/ogg"],
-    video: ["video/mp4", "video/webm"]
-  };
-  const MAX_SIZE = 50 * 1024 * 1024;
-
-  let app, auth, db, storage;
-  let configured = false;
-  let adminUser = null;
-
-  const isConfigured =
-    firebaseConfig.apiKey !== "BURAYA_API_KEY" &&
-    firebaseConfig.projectId !== "BURAYA_PROJECT_ID" &&
-    ADMIN_UID !== "BURAYA_ADMIN_UID";
-
-  function say(id, text) {
-    $(id).textContent = text;
-  }
-
-  function escapeText(value) {
-    return String(value ?? "").replace(/[&<>"']/g, ch => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    })[ch]);
-  }
-
-  function safeFileName(name) {
-    return String(name || "media")
-      .replace(/[^a-zA-Z0-9._-]/g, "_")
-      .slice(-100);
-  }
-
-  function showMedia(container, item, adminMode = false) {
-    const card = document.createElement("article");
-    card.className = "panel media-card";
-
-    const title = document.createElement("h3");
-    title.textContent = item.caption || "Media faylı";
-    card.appendChild(title);
-
-    if (item.sender) {
-      const sender = document.createElement("p");
-      sender.className = "muted";
-      sender.textContent = "Göndərən: " + item.sender;
-      card.appendChild(sender);
-    }
-
-    if (item.url) {
-      let media;
-      if (item.type === "image") {
-        media = document.createElement("img");
-        media.alt = item.caption || "Paylaşılan şəkil";
-        media.loading = "lazy";
-      } else if (item.type === "audio") {
-        media = document.createElement("audio");
-        media.controls = true;
-      } else {
-        media = document.createElement("video");
-        media.controls = true;
-        media.playsInline = true;
-        media.preload = "metadata";
-      }
-
-      media.src = item.url;
-      card.appendChild(media);
-    }
-
-    if (adminMode) {
-      const status = document.createElement("p");
-      status.className = "status";
-      status.textContent = "Təsdiq gözləyir";
-      card.appendChild(status);
-
-      const approve = document.createElement("button");
-      approve.textContent = "Təsdiqlə və yayımla";
-      approve.addEventListener("click", async () => {
-        approve.disabled = true;
-        try {
-          await db.collection("media").doc(item.id).update({
-            status: "approved",
-            approvedAt: firebase.firestore.FieldValue.serverTimestamp()
-          });
-          card.remove();
-          say("adminMessage", "Fayl təsdiqləndi və yayımlandı.");
-          await loadGallery();
-        } catch (error) {
-          say("adminMessage", "Təsdiq alınmadı: " + error.message);
-          approve.disabled = false;
-        }
-      });
-      card.appendChild(approve);
-
-      const reject = document.createElement("button");
-      reject.className = "danger";
-      reject.textContent = "Rədd et və sil";
-      reject.addEventListener("click", async () => {
-        if (!confirm("Bu faylı rədd edib silmək istəyirsən?")) return;
-        reject.disabled = true;
-        try {
-          await storage.ref(item.storagePath).delete();
-          await db.collection("media").doc(item.id).delete();
-          card.remove();
-          say("adminMessage", "Fayl rədd edildi və silindi.");
-        } catch (error) {
-          say("adminMessage", "Silmək alınmadı: " + error.message);
-          reject.disabled = false;
-        }
-      });
-      card.appendChild(reject);
-    }
-
-    container.appendChild(card);
-  }
-
-  async function loadGallery() {
-    const grid = $("galleryGrid");
-    grid.replaceChildren();
-    say("galleryMessage", "Qalereya yüklənir...");
-
-    try {
-      const snap = await db.collection("media")
-        .where("status", "==", "approved")
-        .orderBy("approvedAt", "desc")
-        .limit(100)
-        .get();
-
-      if (snap.empty) {
-        say("galleryMessage", "Hələ təsdiqlənmiş fayl yoxdur.");
-        return;
-      }
-
-      say("galleryMessage", "");
-      for (const doc of snap.docs) {
-        const item = { id: doc.id, ...doc.data() };
-        try {
-          item.url = await storage.ref(item.storagePath).getDownloadURL();
-          showMedia(grid, item);
-        } catch (error) {
-          console.warn("Media açıla bilmədi:", error);
-        }
-      }
-    } catch (error) {
-      say("galleryMessage",
-        "Qalereya yüklənmədi. Firebase konfiqurasiyasını və qaydaları yoxla.");
-      console.error(error);
-    }
-  }
-
-  async function loadPending() {
-    if (!adminUser || adminUser.uid !== ADMIN_UID) {
-      say("adminMessage", "Bu bölmə üçün icazə yoxdur.");
-      return;
-    }
-
-    const grid = $("pendingGrid");
-    grid.replaceChildren();
-    say("adminMessage", "Gözləyən fayllar yüklənir...");
-
-    try {
-      const snap = await db.collection("media")
-        .where("status", "==", "pending")
-        .orderBy("createdAt", "desc")
-        .limit(100)
-        .get();
-
-      if (snap.empty) {
-        say("adminMessage", "Təsdiq gözləyən fayl yoxdur.");
-        return;
-      }
-
-      say("adminMessage", "");
-      for (const doc of snap.docs) {
-        const item = { id: doc.id, ...doc.data() };
-        try {
-          item.url = await storage.ref(item.storagePath).getDownloadURL();
-          showMedia(grid, item, true);
-        } catch (error) {
-          console.warn("Gözləyən fayl açıla bilmədi:", error);
-        }
-      }
-    } catch (error) {
-      say("adminMessage", "Siyahı açıla bilmədi. Təhlükəsizlik qaydalarını yoxla.");
-      console.error(error);
-    }
-  }
-
-  $("uploadForm").addEventListener("submit", async event => {
-    event.preventDefault();
-
-    if (!configured) {
-      say("message", "Əvvəl Firebase məlumatlarını əlavə edib qaydaları qurmaq lazımdır.");
-      return;
-    }
-
-    const file = $("mediaFile").files[0];
-    const type = $("fileType").value;
-    const caption = $("caption").value.trim();
-    const sender = $("sender").value.trim();
-
-    if (!file || !caption) {
-      say("message", "Faylı seç və onun adını yaz.");
-      return;
-    }
-    if (!allowedTypes[type]?.includes(file.type)) {
-      say("message", "Seçilmiş fayl növü uyğun deyil. Fayl növünü və formatını yoxla.");
-      return;
-    }
-    if (file.size > MAX_SIZE) {
-      say("message", "Fayl 50 MB-dan böyükdür.");
-      return;
-    }
-
-    const button = $("uploadButton");
-    button.disabled = true;
-    say("message", "Fayl yoxlamaya göndərilir...");
-
-    let docRef = null;
-    let storagePath = null;
-
-    try {
-      // Sənəd əvvəl yaradılır ki, Storage qaydaları statusu yoxlaya bilsin.
-      docRef = db.collection("media").doc();
-      storagePath = "uploads/" + docRef.id + "/" + safeFileName(file.name);
-
-      await docRef.set({
-        caption,
-        sender,
-        type,
-        originalName: safeFileName(file.name),
-        storagePath,
-        status: "pending",
-        createdAt: firebase.firestore.FieldValue.serverTimestamp()
-      });
-
-      await storage.ref(storagePath).put(file, {
-        contentType: file.type
-      });
-
-      say("message",
-        "Fayl uğurla göndərildi! Müəllif təsdiqləyənə qədər ictimai qalereyada görünməyəcək.");
-      $("uploadForm").reset();
-    } catch (error) {
-      console.error(error);
-      say("message",
-        "Yükləmə baş tutmadı. Firebase konfiqurasiyasını, giriş icazələrini və təhlükəsizlik qaydalarını yoxla.");
-
-      // Natamam yükləmə olduqda yarımçıq sənədi təmizləməyə çalış.
-      if (docRef) {
-        try {
-          if (storagePath) await storage.ref(storagePath).delete();
-        } catch (_) {}
-        try { await docRef.delete(); } catch (_) {}
-      }
-    } finally {
-      button.disabled = false;
-    }
-  });
-
-  $("loginForm").addEventListener("submit", async event => {
-    event.preventDefault();
-    if (!configured) {
-      say("adminMessage", "Əvvəl Firebase konfiqurasiyasını tamamla.");
-      return;
-    }
-
-    $("loginButton").disabled = true;
-    try {
-      const result = await auth.signInWithEmailAndPassword(
-        $("adminEmail").value.trim(),
-        $("adminPassword").value
-      );
-
-      if (result.user.uid !== ADMIN_UID) {
-        await auth.signOut();
-        say("adminMessage", "Bu hesab administrator deyil.");
-        return;
-      }
-
-      adminUser = result.user;
-      $("adminPanel").classList.remove("hidden");
-      $("loginForm").classList.add("hidden");
-      await loadPending();
-    } catch (error) {
-      say("adminMessage", "Giriş alınmadı. E-poçt və şifrəni yoxla.");
-    } finally {
-      $("loginButton").disabled = false;
-    }
-  });
-
-  $("refreshPending").addEventListener("click", loadPending);
-
-  $("logoutButton").addEventListener("click", async () => {
-    await auth.signOut();
-    adminUser = null;
-    $("adminPanel").classList.add("hidden");
-    $("loginForm").classList.remove("hidden");
-    say("adminMessage", "Hesabdan çıxış edildi.");
-  });
-
-  if (!isConfigured) {
-    say("galleryMessage", "Firebase qurulmayıb. Aşağıdakı quraşdırma addımlarını tamamla.");
-    say("message", "Fayl göndərmək üçün əvvəl Firebase bağlantısı lazımdır.");
-    say("adminMessage", "Administrator bölməsi Firebase qurulduqdan sonra işləyəcək.");
-    return;
-  }
-
-  try {
-    app = firebase.initializeApp(firebaseConfig);
-    auth = firebase.auth();
-    db = firebase.firestore();
-    storage = firebase.storage();
-    configured = true;
-
-    loadGallery();
-
-    auth.onAuthStateChanged(user => {
-      adminUser = user && user.uid === ADMIN_UID ? user : null;
-      if (adminUser) {
-        $("adminPanel").classList.remove("hidden");
-        $("loginForm").classList.add("hidden");
-        loadPending();
-      } else {
-        $("adminPanel").classList.add("hidden");
-        $("loginForm").classList.remove("hidden");
-      }
-    });
-  } catch (error) {
-    console.error(error);
-    say("galleryMessage", "Firebase başlanmadı. Konfiqurasiya məlumatlarını yoxla.");
-  }
-})();
-</script>
-
-
-
-  HTML
-
-<!DOCTYPE html>
-<html lang="az">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#28134b">
-  <title>Ağamirzə Cəfərli | Şeirlər və Media</title>
-  <style>
-    :root {
-      --bg: #160d28;
-      --panel: #281943;
-      --gold: #f4cc77;
-      --text: #fff8ed;
-      --muted: #d3c6e4;
-      --border: #574071;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, sans-serif;
-      line-height: 1.65;
-    }
-    header {
-      padding: 38px 18px;
-      text-align: center;
-      background: linear-gradient(140deg, #422269, #170d29);
-      border-bottom: 2px solid var(--gold);
-    }
-    header h1 {
-      margin: 0;
-      color: var(--gold);
-      font-size: clamp(28px, 6vw, 44px);
-    }
-    header p { color: var(--muted); }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px;
-      background: #211436;
-      position: sticky;
-      top: 0;
-      z-index: 5;
-    }
-    nav a {
-      color: var(--gold);
-      text-decoration: none;
-      padding: 7px 10px;
-      border-radius: 8px;
-    }
-    nav a:hover { background: var(--panel); }
-    main { width: min(1000px, 92%); margin: auto; }
-    section { padding: 30px 0; }
-    h2 { color: var(--gold); }
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
-      margin: 16px 0;
-      overflow-wrap: anywhere;
-    }
-    .hero { text-align: center; padding: 50px 10px 30px; }
-    .hero p { max-width: 650px; margin: 10px auto; }
-    .button, button {
-      display: inline-block;
-      border: 0;
-      border-radius: 9px;
-      background: var(--gold);
-      color: #241334;
-      font-weight: bold;
-      padding: 11px 16px;
-      cursor: pointer;
-      text-decoration: none;
-      margin: 5px 3px;
-    }
-    button.secondary { background: #493363; color: white; }
-    button.danger { background: #a83f55; color: white; }
-    button:disabled { opacity: .55; cursor: wait; }
-    input, textarea, select {
-      display: block;
-      width: 100%;
-      margin: 7px 0 15px;
-      padding: 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      background: #170e28;
-      font: inherit;
-    }
-    input[type="file"] { padding: 9px; }
-    label { display: block; color: var(--muted); }
-    .muted, small { color: var(--muted); }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 14px;
-    }
-    .media-card img, .media-card video {
-      width: 100%;
-      max-height: 360px;
-      object-fit: contain;
-      background: #10091b;
-      border-radius: 9px;
-    }
-    .media-card audio { width: 100%; }
-    .status { color: var(--gold); font-size: .95rem; }
-    .hidden { display: none !important; }
-    .notice {
-      padding: 12px;
-      border-left: 3px solid var(--gold);
-      background: #211436;
-      border-radius: 6px;
-    }
-    footer {
-      text-align: center;
-      padding: 28px 12px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-    }
-    #message { white-space: pre-wrap; }
-  </style>
-</head>
-
-<body>
-<header>
-  <h1>Ağamirzə Cəfərli</h1>
-  <p>Şeirlər • Sözün gücü • Xatirələr • Media</p>
-</header>
-
-<nav>
-  <a href="#home">Ana səhifə</a>
-  <a href="#poems">Şeirlər</a>
-  <a href="#gallery">Media qalereyası</a>
-  <a href="#upload">Fayl göndər</a>
-  <a href="#about">Müəllif</a>
-  <a href="#admin">İdarəetmə</a>
-</nav>
-
-<main>
-  <section id="home" class="hero">
-    <h2>Şeirlərin və xatirələrin ünvanı</h2>
-    <p>
-      Ağamirzə Cəfərlinin yaradıcılığına həsr olunmuş səhifəyə xoş gəlmisiniz.
-      Şeirləri oxuyun, audio və videolara baxın, öz faylınızı da göndərin.
-    </p>
-    <a class="button" href="#poems">Şeirlərə bax</a>
-    <a class="button" href="#gallery">Qalereyanı aç</a>
-  </section>
-
-  <section id="poems">
-    <h2>Şeirlər</h2>
-    <div class="panel">
-      <p>
-        Şeirlərini bu hissədə yerləşdirə bilərsən. Əvvəlki saytdakı şeirlərin
-        mətnlərini burada yenidən əlavə et; bu nümunə kod həmin mətnləri
-        avtomatik bərpa etmir.
-      </p>
-      <p class="muted">
-        Şeirlərin mətnini sonradan əlavə etmək üçün bu bölmədə ayrıca şeir
-        kartları yarada bilərsən.
-      </p>
+    <!-- KİTABIN İÇİ -->
+    <div class="open-pages" id="openPages" hidden>
+      <article class="sheet">
+        <div class="flower-border">🌿 ❀ 🍂 ❀ 🌿</div>
+        <div id="poemLeft" class="poem-content"></div>
+        <span id="numLeft" class="page-num"></span>
+      </article>
+      <article class="sheet">
+        <div class="flower-border">🌹 ❀ 🍁 ❀ 🌹</div>
+        <div id="poemRight" class="poem-content"></div>
+        <span id="numRight" class="page-num"></span>
+      </article>
     </div>
-  </section>
-
-  <section id="gallery">
-    <h2>İctimai media qalereyası</h2>
-    <p class="muted">
-      Burada yalnız müəllif tərəfindən təsdiqlənmiş fayllar göstərilir.
-    </p>
-    <div id="galleryMessage" class="notice">Qalereya yüklənir...</div>
-    <div id="galleryGrid" class="grid"></div>
-  </section>
-
-  <section id="upload">
-    <h2>Şəkil, audio və video göndər</h2>
-    <div class="panel">
-      <p>
-        Fayl əvvəlcə yoxlamaya göndərilir. Sən təsdiqləyənədək ictimai
-        qalereyada görünməyəcək.
-      </p>
-
-      <form id="uploadForm">
-        <label for="sender">Adın (istəyə bağlı)</label>
-        <input id="sender" maxlength="80" placeholder="Adınız">
-
-        <label for="caption">Faylın adı və ya qısa izahı</label>
-        <input id="caption" maxlength="150" required
-               placeholder="Məsələn: Şeir gecəsindən xatirə">
-
-        <label for="fileType">Faylın növü</label>
-        <select id="fileType" required>
-          <option value="image">Şəkil</option>
-          <option value="audio">Audio</option>
-          <option value="video">Video</option>
-        </select>
-
-        <label for="mediaFile">Faylı seç</label>
-        <input id="mediaFile" type="file" required
-               accept="image/jpeg,image/png,image/webp,audio/mpeg,audio/mp4,audio/wav,audio/ogg,video/mp4,video/webm">
-
-        <p class="muted">
-          Maksimum fayl ölçüsü: 50 MB. Yalnız özünüzə aid və ya paylaşmağa
-          icazəniz olan faylları göndərin.
-        </p>
-
-        <button id="uploadButton" type="submit">Yoxlamaya göndər</button>
-      </form>
-      <p id="message" role="status" aria-live="polite"></p>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>Müəllif haqqında</h2>
-    <div class="panel">
-      <p>
-        Ağamirzə Cəfərli — bu səhifə onun yaradıcılığını, şeirlərini və
-        yaradıcılıqla bağlı media materiallarını bir araya toplamaq üçündür.
-      </p>
-      <p class="muted">
-        Buraya müəllifin bioqrafiyasını, fotosunu və kitab məlumatlarını əlavə edə bilərsən.
-      </p>
-    </div>
-  </section>
-
-  <section id="admin">
-    <h2>Müəllifin idarəetmə bölməsi</h2>
-    <div class="panel">
-      <p class="muted">
-        Bu hissə yalnız Firebase-də administrator kimi müəyyən edilmiş hesab
-        ilə işləməlidir. İctimai istifadəçilər burada faylları təsdiqləyə bilməz.
-      </p>
-
-      <form id="loginForm">
-        <label for="adminEmail">Administrator e-poçtu</label>
-        <input id="adminEmail" type="email" autocomplete="username" required>
-
-        <label for="adminPassword">Şifrə</label>
-        <input id="adminPassword" type="password"
-               autocomplete="current-password" required>
-
-        <button id="loginButton" type="submit">Daxil ol</button>
-      </form>
-
-      <p id="adminMessage" role="status" aria-live="polite"></p>
-
-      <div id="adminPanel" class="hidden">
-        <p class="status">Administrator kimi daxil olmusunuz.</p>
-        <button id="refreshPending" type="button">Gözləyənləri yenilə</button>
-        <button id="logoutButton" type="button" class="secondary">Çıxış</button>
-        <h3>Təsdiq gözləyən fayllar</h3>
-        <div id="pendingGrid" class="grid"></div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <p>© Ağamirzə Cəfərli — Bütün hüquqlar qorunur.</p>
-</footer>
-
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
-
-<script>
-(() => {
-  "use strict";
-
-  // 1. Firebase Console-dan aldığın məlumatları bura yaz.
-  const firebaseConfig = {
-    apiKey: "BURAYA_API_KEY",
-    authDomain: "BURAYA_PROJECT_ID.firebaseapp.com",
-    projectId: "BURAYA_PROJECT_ID",
-    storageBucket: "BURAYA_STORAGE_BUCKET",
-    messagingSenderId: "BURAYA_MESSAGING_SENDER_ID",
-    appId: "BURAYA_APP_ID"
-  };
-
-  // 2. Firebase Authentication-dan administrator UID-ni yaz.
-  // Bu dəyər təhlükəsizlik qaydalarında da eyni olmalıdır.
-  const ADMIN_UID = "BURAYA_ADMIN_UID";
-
-  const $ = id => document.getElementById(id);
-  const allowedTypes = {
-    image: ["image/jpeg", "image/png", "image/webp"],
-    audio: ["audio/mpeg", "audio/mp4", "audio/wav", "audio/ogg"],
-    video: ["video/mp4", "video/webm"]
-  };
-  const MAX_SIZE = 50 * 1024 * 1024;
-
-  let app, auth, db, storage;
-  let configured = false;
-  let adminUser = null;
-
-  const isConfigured =
-    firebaseConfig.apiKey !== "BURAYA_API_KEY" &&
-    firebaseConfig.projectId !== "BURAYA_PROJECT_ID" &&
-    ADMIN_UID !== "BURAYA_ADMIN_UID";
-
-  function say(id, text) {
-    $(id).textContent = text;
-  }
-
-  function escapeText(value) {
-    return String(value ?? "").replace(/[&<>"']/g, ch => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    })[ch]);
-  }
-
-  function safeFileName(name) {
-    return String(name || "media")
-      .replace(/[^a-zA-Z0-9._-]/g, "_")
-      .slice(-100);
-  }
-
-  function showMedia(container, item, adminMode = false) {
-    const card = document.createElement("article");
-    card.className = "panel media-card";
-
-    const title = document.createElement("h3");
-    title.textContent = item.caption || "Media faylı";
-    card.appendChild(title);
-
-    if (item.sender) {
-      const sender = document.createElement("p");
-      sender.className = "muted";
-      sender.textContent = "Göndərən: " + item.sender;
-      card.appendChild(sender);
-    }
-
-    if (item.url) {
-      let media;
-      if (item.type === "image") {
-        media = document.createElement("img");
-        media.alt = item.caption || "Paylaşılan şəkil";
-        media.loading = "lazy";
-      } else if (item.type === "audio") {
-        media = document.createElement("audio");
-        media.controls = true;
-      } else {
-        media = document.createElement("video");
-        media.controls = true;
-        media.playsInline = true;
-        media.preload = "metadata";
-      }
-
-      media.src = item.url;
-      card.appendChild(media);
-    }
-
-    if (adminMode) {
-      const status = document.createElement("p");
-      status.className = "status";
-      status.textContent = "Təsdiq gözləyir";
-      card.appendChild(status);
-
-      const approve = document.createElement("button");
-      approve.textContent = "Təsdiqlə və yayımla";
-      approve.addEventListener("click", async () => {
-        approve.disabled = true;
-        try {
-          await db.collection("media").doc(item.id).update({
-            status: "approved",
-            approvedAt: firebase.firestore.FieldValue.serverTimestamp()
-          });
-          card.remove();
-          say("adminMessage", "Fayl təsdiqləndi və yayımlandı.");
-          await loadGallery();
-        } catch (error) {
-          say("adminMessage", "Təsdiq alınmadı: " + error.message);
-          approve.disabled = false;
-        }
-      });
-      card.appendChild(approve);
-
-      const reject = document.createElement("button");
-      reject.className = "danger";
-      reject.textContent = "Rədd et və sil";
-      reject.addEventListener("click", async () => {
-        if (!confirm("Bu faylı rədd edib silmək istəyirsən?")) return;
-        reject.disabled = true;
-        try {
-          await storage.ref(item.storagePath).delete();
-          await db.collection("media").doc(item.id).delete();
-          card.remove();
-          say("adminMessage", "Fayl rədd edildi və silindi.");
-        } catch (error) {
-          say("adminMessage", "Silmək alınmadı: " + error.message);
-          reject.disabled = false;
-        }
-      });
-      card.appendChild(reject);
-    }
-
-    container.appendChild(card);
-  }
-
-  async function loadGallery() {
-    const grid = $("galleryGrid");
-    grid.replaceChildren();
-    say("galleryMessage", "Qalereya yüklənir...");
-
-    try {
-      const snap = await db.collection("media")
-        .where("status", "==", "approved")
-        .orderBy("approvedAt", "desc")
-        .limit(100)
-        .get();
-
-      if (snap.empty) {
-        say("galleryMessage", "Hələ təsdiqlənmiş fayl yoxdur.");
-        return;
-      }
-
-      say("galleryMessage", "");
-      for (const doc of snap.docs) {
-        const item = { id: doc.id, ...doc.data() };
-        try {
-          item.url = await storage.ref(item.storagePath).getDownloadURL();
-          showMedia(grid, item);
-        } catch (error) {
-          console.warn("Media açıla bilmədi:", error);
-        }
-      }
-    } catch (error) {
-      say("galleryMessage",
-        "Qalereya yüklənmədi. Firebase konfiqurasiyasını və qaydaları yoxla.");
-      console.error(error);
-    }
-  }
-
-  async function loadPending() {
-    if (!adminUser || adminUser.uid !== ADMIN_UID) {
-      say("adminMessage", "Bu bölmə üçün icazə yoxdur.");
-      return;
-    }
-
-    const grid = $("pendingGrid");
-    grid.replaceChildren();
-    say("adminMessage", "Gözləyən fayllar yüklənir...");
-
-    try {
-      const snap = await db.collection("media")
-        .where("status", "==", "pending")
-        .orderBy("createdAt", "desc")
-        .limit(100)
-        .get();
-
-      if (snap.empty) {
-        say("adminMessage", "Təsdiq gözləyən fayl yoxdur.");
-        return;
-      }
-
-      say("adminMessage", "");
-      for (const doc of snap.docs) {
-        const item = { id: doc.id, ...doc.data() };
-        try {
-          item.url = await storage.ref(item.storagePath).getDownloadURL();
-          showMedia(grid, item, true);
-        } catch (error) {
-          console.warn("Gözləyən fayl açıla bilmədi:", error);
-        }
-      }
-    } catch (error) {
-      say("adminMessage", "Siyahı açıla bilmədi. Təhlükəsizlik qaydalarını yoxla.");
-      console.error(error);
-    }
-  }
-
-  $("uploadForm").addEventListener("submit", async event => {
-    event.preventDefault();
-
-    if (!configured) {
-      say("message", "Əvvəl Firebase məlumatlarını əlavə edib qaydaları qurmaq lazımdır.");
-      return;
-    }
-
-    const file = $("mediaFile").files[0];
-    const type = $("fileType").value;
-    const caption = $("caption").value.trim();
-    const sender = $("sender").value.trim();
-
-    if (!file || !caption) {
-      say("message", "Faylı seç və onun adını yaz.");
-      return;
-    }
-    if (!allowedTypes[type]?.includes(file.type)) {
-      say("message", "Seçilmiş fayl növü uyğun deyil. Fayl növünü və formatını yoxla.");
-      return;
-    }
-    if (file.size > MAX_SIZE) {
-      say("message", "Fayl 50 MB-dan böyükdür.");
-      return;
-    }
-
-    const button = $("uploadButton");
-    button.disabled = true;
-    say("message", "Fayl yoxlamaya göndərilir...");
-
-    let docRef = null;
-    let storagePath = null;
-
-    try {
-      // Sənəd əvvəl yaradılır ki, Storage qaydaları statusu yoxlaya bilsin.
-      docRef = db.collection("media").doc();
-      storagePath = "uploads/" + docRef.id + "/" + safeFileName(file.name);
-
-      await docRef.set({
-        caption,
-        sender,
-        type,
-        originalName: safeFileName(file.name),
-        storagePath,
-        status: "pending",
-        createdAt: firebase.firestore.FieldValue.serverTimestamp()
-      });
-
-      await storage.ref(storagePath).put(file, {
-        contentType: file.type
-      });
-
-      say("message",
-        "Fayl uğurla göndərildi! Müəllif təsdiqləyənə qədər ictimai qalereyada görünməyəcək.");
-      $("uploadForm").reset();
-    } catch (error) {
-      console.error(error);
-      say("message",
-        "Yükləmə baş tutmadı. Firebase konfiqurasiyasını, giriş icazələrini və təhlükəsizlik qaydalarını yoxla.");
-
-      // Natamam yükləmə olduqda yarımçıq sənədi təmizləməyə çalış.
-      if (docRef) {
-        try {
-          if (storagePath) await storage.ref(storagePath).delete();
-        } catch (_) {}
-        try { await docRef.delete(); } catch (_) {}
-      }
-    } finally {
-      button.disabled = false;
-    }
-  });
-
-  $("loginForm").addEventListener("submit", async event => {
-    event.preventDefault();
-    if (!configured) {
-      say("adminMessage", "Əvvəl Firebase konfiqurasiyasını tamamla.");
-      return;
-    }
-
-    $("loginButton").disabled = true;
-    try {
-      const result = await auth.signInWithEmailAndPassword(
-        $("adminEmail").value.trim(),
-        $("adminPassword").value
-      );
-
-      if (result.user.uid !== ADMIN_UID) {
-        await auth.signOut();
-        say("adminMessage", "Bu hesab administrator deyil.");
-        return;
-      }
-
-      adminUser = result.user;
-      $("adminPanel").classList.remove("hidden");
-      $("loginForm").classList.add("hidden");
-      await loadPending();
-    } catch (error) {
-      say("adminMessage", "Giriş alınmadı. E-poçt və şifrəni yoxla.");
-    } finally {
-      $("loginButton").disabled = false;
-    }
-  });
-
-  $("refreshPending").addEventListener("click", loadPending);
-
-  $("logoutButton").addEventListener("click", async () => {
-    await auth.signOut();
-    adminUser = null;
-    $("adminPanel").classList.add("hidden");
-    $("loginForm").classList.remove("hidden");
-    say("adminMessage", "Hesabdan çıxış edildi.");
-  });
-
-  if (!isConfigured) {
-    say("galleryMessage", "Firebase qurulmayıb. Aşağıdakı quraşdırma addımlarını tamamla.");
-    say("message", "Fayl göndərmək üçün əvvəl Firebase bağlantısı lazımdır.");
-    say("adminMessage", "Administrator bölməsi Firebase qurulduqdan sonra işləyəcək.");
-    return;
-  }
-
-  try {
-    app = firebase.initializeApp(firebaseConfig);
-    auth = firebase.auth();
-    db = firebase.firestore();
-    storage = firebase.storage();
-    configured = true;
-
-    loadGallery();
-
-    auth.onAuthStateChanged(user => {
-      adminUser = user && user.uid === ADMIN_UID ? user : null;
-      if (adminUser) {
-        $("adminPanel").classList.remove("hidden");
-        $("loginForm").classList.add("hidden");
-        loadPending();
-      } else {
-        $("adminPanel").classList.add("hidden");
-        $("loginForm").classList.remove("hidden");
-      }
-    });
-  } catch (error) {
-    console.error(error);
-    say("galleryMessage", "Firebase başlanmadı. Konfiqurasiya məlumatlarını yoxla.");
-  }
-})();
-</script>
-<section id="videolar" style="max-width:900px;margin:30px auto;padding:20px;">
-  <h2 style="text-align:center;">Videolarım</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
-    <iframe src="https://www.youtube.com/embed/AJPB6bcjeCg" title="Video 1" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen loading="lazy"></iframe>
-    <iframe src="https://www.youtube.com/embed/fmdA1viS164" title="Video 2" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen loading="lazy"></iframe>
-    <iframe src="https://www.youtube.com/embed/hh1m57rhjkE" title="Video 3" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen loading="lazy"></iframe>
-    <iframe src="https://www.youtube.com/embed/WzyFeZPuqMk" title="Video 4" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen loading="lazy"></iframe>
-    <iframe src="https://www.youtube.com/embed/hXh0w_bXw3A" title="Video 5" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <div class="book-nav">
+    <button id="previousSpread" class="book-btn" disabled>
+      ◀ Əvvəlki səhifə
+    </button>
+    <span id="bookPageStatus">Kitabın üz qabığı</span>
+    <button id="nextSpread" class="book-btn" disabled>
+      Sonrakı səhifə ▶
+    </button>
   </div>
 </section>
-</body>
-</html>
-</body>
-</html>
+
+<style>
+#elektron-kitab {
+  --forest: #194b31;
+  --leaf: #2b7043;
+  --gold: #d0a54c;
+  width: 100%;
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 16px;
+  color: var(--forest);
+  font-family: Georgia, "Times New Roman", serif;
+}
+#elektron-kitab * { box-sizing: border-box; }
+.book-heading {
+  text-align: center;
+  font-size: clamp(23px, 4vw, 34px);
+}
+.book {
+  max-width: 820px;
+  margin: auto;
+  perspective: 1400px;
+}
+.cover {
+  padding: 13px;
+  background: linear-gradient(130deg, #123621, #36744a, #102d1d);
+  color: #ffedb3;
+  border: 4px double var(--gold);
+  border-radius: 6px 18px 18px 6px;
+  box-shadow: 0 14px 30px #0004, inset 6px 0 #c69b42;
+}
+.cover-frame {
+  min-height: 620px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border: 3px double var(--gold);
+  background: linear-gradient(#a6c5a0 0%, #d7c58c 34%, #5c8a4d 58%, #173e29 100%);
+}
+.sun {
+  position: absolute;
+  top: 48px;
+  right: 12%;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #ffe5a0;
+  box-shadow: 0 0 32px #ffdb85;
+}
+.hill {
+  position: absolute;
+  width: 120%;
+  left: -10%;
+  height: 180px;
+  clip-path: polygon(0 78%, 24% 12%, 45% 65%, 67% 10%, 100% 76%, 100% 100%, 0 100%);
+}
+.hill-one { top: 130px; background: #789a6c; }
+.hill-two {
+  top: 195px;
+  transform: scaleX(-1);
+  background: #47754a;
+}
+.forest {
+  position: absolute;
+  top: 240px;
+  width: 100%;
+  font-size: clamp(22px, 4vw, 36px);
+}
+.flowers {
+  position: absolute;
+  top: 390px;
+  width: 100%;
+  font-size: clamp(18px, 3vw, 27px);
+}
+.writer {
+  position: absolute;
+  z-index: 2;
+  top: 210px;
+  left: 50%;
+  width: 170px;
+  height: 190px;
+  transform: translateX(-50%);
+}
+.head {
+  position: absolute;
+  top: 0;
+  left: 59px;
+  width: 49px;
+  height: 58px;
+  border: 2px solid #65442d;
+  border-radius: 48%;
+  background: #d9a477;
+}
+.hair {
+  position: absolute;
+  top: -5px;
+  left: 54px;
+  width: 59px;
+  height: 27px;
+  border-radius: 50% 50% 20% 20%;
+  background: #463326;
+}
+.body {
+  position: absolute;
+  top: 53px;
+  left: 30px;
+  width: 110px;
+  height: 88px;
+  border: 3px solid #59432b;
+  border-radius: 38px 38px 8px 8px;
+  background: #e4d3ac;
+}
+.arm {
+  position: absolute;
+  top: 78px;
+  left: 83px;
+  width: 75px;
+  height: 17px;
+  transform: rotate(24deg);
+  border-radius: 10px;
+  background: #d9a477;
+}
+.paper {
+  position: absolute;
+  top: 102px;
+  left: 107px;
+  z-index: 3;
+  width: 48px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  color: #245334;
+  background: #fff4d3;
+  border: 2px solid #c69b42;
+  transform: rotate(-8deg);
+  font-size: 25px;
+}
+.book-desk {
+  position: absolute;
+  top: 144px;
+  left: 10px;
+  width: 155px;
+  height: 12px;
+  border-radius: 3px;
+  background: #754a28;
+  box-shadow: 0 8px 0 #4a301e;
+}
+.cover-words {
+  position: absolute;
+  z-index: 4;
+  bottom: 22px;
+  width: 100%;
+  padding: 18px 8px;
+  background: #123622eF;
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+}
+.cover-label { letter-spacing: 2px; font-size: 13px; }
+.cover-words h3 {
+  margin: 10px 0;
+  font-size: clamp(25px, 5vw, 37px);
+  color: #f5d77d;
+}
+.cover-words p { font-style: italic; }
+.leaf-corner {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 22px;
+}
+.book-btn {
+  min-height: 44px;
+  padding: 11px 17px;
+  border: 1px solid var(--gold);
+  border-radius: 24px;
+  color: #fff0bd;
+  background: var(--forest);
+  cursor: pointer;
+  font: inherit;
+  touch-action: manipulation;
+}
+.open-pages {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: 480px;
+  border: 5px double var(--gold);
+  background: #fff9e8;
+  box-shadow: 0 12px 26px #0003;
+}
+.sheet {
+  position: relative;
+  min-width: 0;
+  min-height: 480px;
+  padding: 25px 20px 45px;
+  border: 2px solid #c9a45c;
+  background:
+    radial-gradient(ellipse at top left, #efd7a266, transparent 35%),
+    #fff9e8;
+  animation: page-turn-in .45s ease;
+}
+.sheet:first-child { border-right: 1px solid #c5a567; }
+.sheet:last-child {
+  border-left: 1px solid #c5a567;
+  box-shadow: inset 8px 0 12px #76531a10;
+}
+.flower-border {
+  text-align: center;
+  margin-bottom: 18px;
+  color: #a17b32;
+  font-size: 19px;
+}
+.poem-content {
+  color: #205b38;
+  text-align: center;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: clamp(15px, 1.8vw, 19px);
+  line-height: 1.9;
+}
+.poem-content h4 {
+  color: #9a712b;
+  font-size: 21px;
+}
+.page-num {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #947337;
+}
+.book-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+#bookPageStatus {
+  text-align: center;
+  font-size: 14px;
+  color: #8b682b;
+}
+.book-btn:disabled { opacity: .45; cursor: not-allowed; }
+@keyframes page-turn-in {
+  from { opacity: .3; transform: rotateY(-7deg); }
+  to { opacity: 1; transform: rotateY(0); }
+}
+@media (max-width: 560px) {
+  #elektron-kitab { padding: 8px; }
+  .cover-frame { min-height: 540px; }
+  .cover { padding: 8px; }
+  .open-pages {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+  .sheet {
+    min-height: 300px;
+    padding: 24px 17px 42px;
+  }
+  .sheet:first-child {
+    border-right: 2px solid #c5a567;
+    border-bottom: 1px solid #c5a567;
+  }
+  .sheet:last-child {
+    border-left: 2px solid #c5a567;
+    border-top: 1px solid #c5a567;
+  }
+  .poem-content { font-size: 16px; line-height: 1.85; }
+  .book-nav { gap: 8px; }
+  .book-btn { padding: 10px 12px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #elektron-kitab * { animation: none !important; }
+}
+</style>
+
+<script>
+(() => {
+  /*
+    ŞEİRLƏRİN YAZILIŞI:
+    Hər misranı yeni sətirdə yaz.
+    Bəndlər arasında bir boş sətir saxla.
+    Nümunə mətnləri öz şeirlərinlə əvəz et.
+  */
+  const poems = [
+    {
+      title: "Birinci şeir",
+      text: `Buraya birinci misranı yaz
+Buraya ikinci misranı yaz
+Buraya üçüncü misranı yaz
+
+İkinci bəndin birinci misrası
+İkinci bəndin ikinci misrası`
+    },
+    {
+      title: "İkinci şeir",
+      text: `Buraya şeirinin birinci misrasını yaz
+Buraya ikinci misrasını yaz
+
+Burada növbəti bənd başlayır
+Misralar yenə alt-alta yazılır`
+    }
+  ];
+
+  const cover = document.getElementById("poetCover");
+  const pages = document.getElementById("openPages");
+  const left = document.getElementById("poemLeft");
+  const right = document.getElementById("poemRight");
+  const leftNum = document.getElementById("numLeft");
+  const rightNum = document.getElementById("numRight");
+  const status = document.getElementById("bookPageStatus");
+  const openBtn = document.getElementById("openPoetBook");
+  const prevBtn = document.getElementById("previousSpread");
+  const nextBtn = document.getElementById("nextSpread");
+
+  const pageContents = [];
+  poems.forEach(poem => {
+    const lines = poem.text.split("\n");
+    const midpoint = Math.ceil(lines.length / 2);
+    pageContents.push({
+      title: poem.title,
+      text: lines.slice(0, midpoint).join("\n")
+    });
+    pageContents.push({
+      title: "",
+      text: lines.slice(midpoint).join("\n")
+    });
+  });
+
+  let spread = 0;
+
+  function fillPage(element, item) {
+    element.replaceChildren();
+    if (!item) return;
+
+    if (item.title) {
+      const heading = document.createElement("h4");
+      heading.textContent = item.title;
+      element.appendChild(heading);
+    }
+
+    const text = document.createElement("div");
+    text.textContent = item.text;
+    element.appendChild(text);
+  }
+
+  function renderPages() {
+    const first = spread * 2;
+    const a = pageContents[first];
+    const b = pageContents[first + 1];
+
+    fillPage(left, a);
+    fillPage(right, b);
+
+    leftNum.textContent = a ? String(first + 1) : "";
+    rightNum.textContent = b ? String(first + 2) : "";
+
+    const end = Math.min(first + 2, pageContents.length);
+    status.textContent =
+      `Səhifələr ${first + 1}–${end} / ${pageContents.length}`;
+
+    prevBtn.disabled = spread === 0;
+    nextBtn.disabled = first + 2 >= pageContents.length;
+  }
+
+  openBtn.addEventListener("click", () => {
+    cover.hidden = true;
+    pages.hidden = false;
+    spread = 0;
+    renderPages();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (spread > 0) {
+      spread--;
+      renderPages();
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if ((spread + 1) * 2 < pageContents.length) {
+      spread++;
+      renderPages();
+    }
+  });
+})();
+</script>
